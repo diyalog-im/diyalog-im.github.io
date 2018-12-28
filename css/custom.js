@@ -10,7 +10,7 @@ export default StyleSheet.create({
         "boxSizing": "border-box"
     },
     "body": {
-        "fontFamily": "system-ui"
+        "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, Lucida Grande, Sans-Serif"
     },
     "top": {
         "background": "linear-gradient( #40b7ed, #3ebfed)"
