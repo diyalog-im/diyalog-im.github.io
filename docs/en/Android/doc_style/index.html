@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Diyalog Android SDK Style · Diyalog</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Diyalog SDK provides custom Diyalog style to your application, using Diyalog style customer can create own styled screen.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Diyalog Android SDK Style · Diyalog"/><meta property="og:type" content="website"/><meta property="og:url" content="https://diyalog-im.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;Diyalog SDK provides custom Diyalog style to your application, using Diyalog style customer can create own styled screen.&lt;/p&gt;
+"/><meta property="og:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/big_logo_wihte.png" alt="Diyalog"/><h2 class="headerTitleWithLogo">Diyalog</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/Android/doc_getting_started" target="_self">Docs</a></li><li class=""><a href="https://github.com/diyalog-im/diyalog-platform" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/tr/Android/doc_style">Türkçe</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Android</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/Android/doc_getting_started">How to configure Diyalog</a></li><li class="navListItem"><a class="navItem" href="/docs/en/Android/tokenBaseAuth">Token Base Authentication</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/Android/doc_style">Diyalog Android SDK Style</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/iOS/iOS">How to configure Diyalog</a></li><li class="navListItem"><a class="navItem" href="/docs/en/iOS/TokenBaseAuthentication">Token Base Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/en/iOS/RichView">Richiew Notificaion Support</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Diyalog Android SDK Style</h1></header><article><div><span><p>Diyalog SDK provides custom Diyalog style to your application, using Diyalog style customer can create own styled screen.</p>
+<h2><a class="anchor" aria-hidden="true" id="how-to-use-custom-style"></a><a href="#how-to-use-custom-style" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use custom style?</h2>
+<p>First create object of DiyalogStyle class from your application class, and using that object you can access all property of DiyaLogStyle class.</p>
+<ul>
+<li>Diyalog style is optional. If customer don't wants to use custom style then SDK will use default style</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="sample-code"></a><a href="#sample-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample code:</h4>
+<pre><code class="hljs css language-sh"> DiyalogStyle style = DiyalogEngine.diyalogInstance().style;
+ style.setMainColor(Color.parseColor(<span class="hljs-string">"#139dea"</span>)); 
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="more-options"></a><a href="#more-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More options?</h2>
+<p><strong>Followings are styles parameters with the help of those parameters User can configure style within their Application:</strong><br /></p>
+<h3><a class="anchor" aria-hidden="true" id="1-general"></a><a href="#1-general" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>1. General</strong></h3>
+<ul>
+<li>To set Application main theme color(Theme color)
+<ul>
+<li>style.setMainColor(Color.parseColor(&quot;#f442d4&quot;));</li>
+<li>Default color theme  in SDK - &quot;#4d74a6&quot;</li>
+<li>This color is used for text and icon in an Application, if user not set any other style parameter then SDK will use theme color as a base.<br />
+<img src="/img/android/StyleDocumentImages/General/mainTheme.png" alt=""> <img src="/img/android/StyleDocumentImages/General/mainTheme2.png" alt=""></li>
+</ul></li>
+<li>To set custom background image in chat(conversation) screen
+<ul>
+<li>style.setDefaultBackgrouds(new int[]{im.diyalog.sdk.R.drawable.intro_background, R.drawable.img_chat_background_default, R.drawable.bg_1, R.drawable.bg_2});</li>
+<li>Customer can use multiple images</li>
+<li>If customer set background by using setDefaultBackground method then user can see all background images in Setting screen, by default SDK will set first image as background but customer can change from list of background from setting screen.<br />
+<img src="/img/android/StyleDocumentImages/General/chatBackground.png" alt=""> <img src="/img/android/StyleDocumentImages/General/chatBackground_setting.png" alt=""></li>
+</ul></li>
+<li>To set toolbar(Header) background color
+<ul>
+<li>style.setToolBarColor(R.color.picker_main_color);</li>
+<li>By default SDK will set the color which user has defined in setMainColor method.<br />
+<img src="/img/android/StyleDocumentImages/General/toolbar.jpg" alt=""></li>
+</ul></li>
+<li>To set floating button background  color based on User action as mentioned below.
+<ul>
+<li>Normal
+<ul>
+<li>style.setFabColor(Color.parseColor(&quot;#77a358&quot;));</li>
+<li>Customer can customize normal fab background color</li>
+<li>Diyalog SDK change all fab background color</li>
+</ul></li>
+<li>Pressed
+<ul>
+<li>style.setFabPressedColor(Color.parseColor(&quot;#a27e57&quot;));</li>
+<li>Diyalog SDK change all pressed fab background color.<br />
+<img src="/img/android/StyleDocumentImages/General/fab_button.jpg" alt=""></li>
+</ul></li>
+</ul></li>
+<li>To set screen background color when options are visible to user on click of floating button.
+<ul>
+<li>style.setMainFabbgColor(Color.parseColor(&quot;#33dd0d1e&quot;));</li>
+<li>When click on fab icon show sub items, SDK will change background color for subitems. <br />
+<img src="/img/android/StyleDocumentImages/General/fab.png" alt=""></li>
+</ul></li>
+<li>To set application background color in all screen
+<ul>
+<li>style.setMainBackgroundColor(Color.parseColor(&quot;#bcc6b8&quot;)); <br />
+<img src="/img/android/StyleDocumentImages/General/ApplicationmainBGColor.png" alt=""></li>
+</ul></li>
+<li>To set place holder background color for user cover avtar Image
+<ul>
+<li>style.setAvatarBackgroundColor(Color.parseColor(&quot;#139dea&quot;));</li>
+</ul></li>
+<li>To set place holder background image for user cover avtar Image
+<ul>
+<li>style.setAvatarBackgroundResource(R.drawable.bg_1);</li>
+<li><strong>Note:</strong> If you set both color and image resource for user placeholder then SDK will accept avatar image resource as a place holder</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="2-customise-toolbar"></a><a href="#2-customise-toolbar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>2. Customise toolbar</strong></h3>
+<p>Diyalog SDK provides custom Toolbar style to your application, using this customise you can set toolbar and statusbar same as your main application.</p>
+<h5><a class="anchor" aria-hidden="true" id="how-to-use-custom-toolbar"></a><a href="#how-to-use-custom-toolbar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use custom toolbar?</h5>
+<p>First create object of DiyalogStyle class from your application class, and using that object you can customise toolbar.</p>
+<h5><a class="anchor" aria-hidden="true" id="sample-code-1"></a><a href="#sample-code-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample code:</h5>
+<pre><code class="hljs css language-sh"> DiyalogStyle style = DiyalogEngine.diyalogInstance().style;
+</code></pre>
+<p><strong>Following are cases in which Client can customise toolbar in sdk:</strong></p>
+<p><strong>- Set gradient background for toolbar and statusbar</strong></p>
+<ul>
+<li>style.setGradientToolbar(R.drawable.gradient_bg);
+<ul>
+<li><p>Client need to create gradient drawable file into main application, and need to pass this file refrence as a configurable parameter.</p>
+<p><img src="/img/android/StyleDocumentImages/toolbar/gradient_bg.png" alt=""></p></li>
+</ul></li>
+</ul>
+<p><strong>- Set background color for toolbar and statusbar</strong></p>
+<ul>
+<li><p>style.setMainColor(Color.parseColor(&quot;#139dea&quot;));</p>
+<ul>
+<li><p>By default Main color of application theme will set as a toolbar &amp; statusbar color</p>
+<p><img src="/img/android/StyleDocumentImages/toolbar/main_color.png" alt=""></p></li>
+</ul></li>
+<li><p>style.setStatusBarColor(Color.parseColor(&quot;#e00b52&quot;));</p>
+<ul>
+<li><p>This will change only statusbar color of sdk.</p>
+<p><img src="/img/android/StyleDocumentImages/toolbar/statusbar_color.png" alt=""></p></li>
+</ul></li>
+<li><p>style.setToolBarColor(R.color.picker_main_color);</p>
+<ul>
+<li><p>This will change only toolbar color of sdk.</p>
+<p><img src="/img/android/StyleDocumentImages/toolbar/Toolbar_color.png" alt=""></p></li>
+</ul></li>
+<li><p><strong>Note:</strong> If you will set gradient background configuration then above configuration will not be apply effact.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="3-setting"></a><a href="#3-setting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>3. Setting</strong></h3>
+<ul>
+<li><p>To set setting screen label and text color</p>
+<ul>
+<li>style.setSettingsCategoryTextColor(Color.parseColor(&quot;#f28e02&quot;));</li>
+<li>By default SDK will set the color which user has defined in setMainColor method.</li>
+</ul></li>
+<li><p>To set setting screen icon color</p>
+<ul>
+<li>style.setSettingsIconColor(Color.parseColor(&quot;#e00b52&quot;));</li>
+</ul></li>
+<li><p>To set setting screen title color</p>
+<ul>
+<li>style.setSettingsTitleColor(Color.parseColor(&quot;#5622b7&quot;));  <br /></li>
+</ul>
+<p><img src="/img/android/StyleDocumentImages/Setting/setting.png" alt=""></p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="4-dividers"></a><a href="#4-dividers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>4. Dividers</strong></h3>
+<ul>
+<li>To set divider color to list in application
+<ul>
+<li>style.setDividerColor(Color.parseColor(&quot;#e00b52&quot;));</li>
+<li>This divider color will apply to whole application as divider color. <br />
+<img src="/img/android/StyleDocumentImages/General/list_divider.jpg" alt=""></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="5-text-color"></a><a href="#5-text-color" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>5. Text color</strong></h3>
+<ul>
+<li>Set primary text color
+<ul>
+<li>style.setTextPrimaryColor(Color.parseColor(&quot;#e00b52&quot;));</li>
+</ul></li>
+<li>Set secondary color
+<ul>
+<li>style.setTextSecondaryColor(Color.parseColor(&quot;#0a0ed8&quot;)); <br />
+<img src="/img/android/StyleDocumentImages/text/text_primary1.png" alt=""> <img src="/img/android/StyleDocumentImages/text/text_primary2.png" alt=""></li>
+</ul></li>
+<li>Set hint color
+<ul>
+<li>style.setTextHintColor(Color.parseColor(&quot;#ede50e&quot;)); <br />
+<img src="/img/android/StyleDocumentImages/text/textHint.jpg" alt=""></li>
+</ul></li>
+<li>Set sub header color
+<ul>
+<li>style.setTextSubHeaderColor(Color.parseColor(&quot;#f49e42&quot;));<br />
+<img src="/img/android/StyleDocumentImages/text/text_primary1.png" alt=""></li>
+<li>In above image see text color of label &quot;Long press for additional options&quot;</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="6-contact-screencontact-tab-of-main-screen"></a><a href="#6-contact-screencontact-tab-of-main-screen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>6. Contact screen(contact tab of main screen)</strong></h3>
+<ul>
+<li>set share icon and text color
+<ul>
+<li>style.setActionShareColor(Color.parseColor(&quot;#0a0ed8&quot;));</li>
+<li>By default SDK will set the color which user has defined in setMainColor method.</li>
+</ul></li>
+<li>set short name(First character) text color</li>
+<li>style.setContactFastTitleColor(Color.parseColor(&quot;#e00b52&quot;));</li>
+<li>By default SDK will set the color which user has defined in setMainColor method.</li>
+<li>set Add contact icon and text color
+<ul>
+<li>style.setActionAddContactColor(Color.parseColor(&quot;#0a0ed8&quot;));</li>
+<li>By default SDK will set the color which user has defined in setMainColor method.</li>
+</ul></li>
+<li>set list divider color
+<ul>
+<li>style.setContactDividerColor(Color.parseColor(&quot;#ede50e&quot;));</li>
+<li>if customer has not set contact divider color then it will accept default divider color which user has set in “setDividerColor” method<br />
+<img src="/img/android/StyleDocumentImages/contact/contact.png" alt=""></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="7-chat-screen-chat-tab-from-home-screen"></a><a href="#7-chat-screen-chat-tab-from-home-screen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>7. Chat screen (Chat tab from home screen)</strong></h3>
+<ul>
+<li>Set indicator color of sent message
+<ul>
+<li>style.setDialogsStateSentColor(Color.parseColor(&quot;#0794ed&quot;));</li>
+</ul></li>
+<li>Set indicator color of delivered message
+<ul>
+<li>style.setDialogsStateDeliveredColor(Color.parseColor(&quot;#edd607&quot;));</li>
+</ul></li>
+<li>Set indicator color of read message
+<ul>
+<li>style.setDialogsStateReadColor(Color.parseColor(&quot;#edd607&quot;)); <br />
+<img src="/img/android/StyleDocumentImages/chat/Indicator.png" alt=""></li>
+</ul></li>
+<li>Set counter text color of unread message count
+<ul>
+<li>style.setDialogsCounterTextColor(Color.parseColor(&quot;#f48004&quot;));</li>
+</ul></li>
+<li>Set counter background color for unread message count
+<ul>
+<li>style.setDialogsCounterBackgroundColor(Color.parseColor(&quot;#120be0&quot;));<br />
+<img src="/img/android/StyleDocumentImages/chat/unreadCount.png" alt=""></li>
+</ul></li>
+<li>Set text color for last conversation message time
+<ul>
+<li>style.setDialogsTimeColor(Color.parseColor(&quot;#c62e0f&quot;));</li>
+</ul></li>
+<li>set divider color between chat list
+<ul>
+<li>style.setDialogsDividerColor(Color.parseColor(&quot;#e0120b&quot;));</li>
+<li>By default SDK show default divider color</li>
+</ul></li>
+<li>Set text color for contact name
+<ul>
+<li>style.setDialogsTitleColor(Color.parseColor(&quot;#4a8413&quot;));</li>
+<li>By default SDK show primary color</li>
+</ul></li>
+<li>Set last message which is either sent or receive text color
+<ul>
+<li>style.setDialogsTextColor(Color.parseColor(&quot;#a8a579&quot;));</li>
+<li>By default SDK show main theme color</li>
+</ul></li>
+<li>Set typing label text color which indicates user is typing a message.
+<ul>
+<li>style.setDialogsTypingColor(Color.parseColor(&quot;#40000000&quot;));</li>
+<li>By default SDK show main theme color<br />
+<img src="/img/android/StyleDocumentImages/chat/typing.png" alt=""></li>
+</ul></li>
+<li>Set last message text color of content type media and document
+<ul>
+<li>style.setDialogsActiveTextColor(Color.parseColor(&quot;#db2a0a&quot;));<br />
+<img src="/img/android/StyleDocumentImages/chat/FileLastMessage.png" alt=""></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="8-friends-profile-group-profile"></a><a href="#8-friends-profile-group-profile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>8. Friends Profile/ Group profile</strong></h3>
+<ul>
+<li>Set title color of friendName and groupName text color
+<ul>
+<li>style.setProfileTitleColor(Color.parseColor(&quot;#139dea&quot;));</li>
+</ul></li>
+<li>subtitle color (Last seen text color)
+<ul>
+<li>style.setProfileSubtitleColor(Color.parseColor(&quot;#139dea&quot;));</li>
+</ul></li>
+<li>contact icon color
+<ul>
+<li>If not set then it will show default action icon color</li>
+<li>style.setProfileContactIconColor (Color.parseColor(&quot;#139dea&quot;));</li>
+</ul></li>
+<li>To set action icon color(action icon like :- Add contact, new message, voice call)
+<ul>
+<li>style.setListActionColor(Color.parseColor(&quot;#db2a0a&quot;));</li>
+<li>By default SDK will set the color which user has defined in setMainColor method.</li>
+</ul></li>
+<li>Small icon color
+<ul>
+<li>style.setSectonIconSmallColor(Color.parseColor(&quot;#0a0ed8&quot;));</li>
+<li>By Default color for small icon is &quot;# b5b6b7&quot;<br />
+<img src="/img/android/StyleDocumentImages/Profile/Profile.png" alt=""></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="9-group-profile"></a><a href="#9-group-profile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>9. Group profile</strong></h3>
+<ul>
+<li>Set admin label text color
+<ul>
+<li>If not pass then set default Accent color</li>
+<li>style.setGroupAdminColor(Color.parseColor(&quot;#0cd341&quot;));</li>
+</ul></li>
+<li>set online label text color into group profile screen for members list
+<ul>
+<li>style.setGroupOnlineColor(Color.parseColor(&quot;#380249&quot;)); <br />
+<img src="/img/android/StyleDocumentImages/Group/groupProfile.png" alt=""></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="10-conversationchat-detail"></a><a href="#10-conversationchat-detail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>10. Conversation(Chat Detail)</strong></h3>
+<ul>
+<li>set enable send message icon color
+<ul>
+<li>style.setConvSendEnabledColor(Color.parseColor(&quot;#0cd341&quot;));</li>
+</ul></li>
+<li>Set disable send message icon color
+<ul>
+<li>style.setConvSendDisabledColor(Color.parseColor(&quot;#db2a0a&quot;));</li>
+</ul></li>
+<li>Set date text color
+<ul>
+<li>style.setConvDatetextColor(Color.parseColor(&quot;#db0be2&quot;));</li>
+</ul></li>
+<li>Set date text background color
+<ul>
+<li>style.setConvDateBgColor(Color.parseColor(&quot;#18d8e2&quot;));</li>
+</ul></li>
+<li>Set chat message color
+<ul>
+<li>style.setConvTextColor(Color.parseColor(&quot;#db2a0a&quot;));</li>
+</ul></li>
+<li>Set chat message date color
+<ul>
+<li>style.setConvTimeColor(Color.parseColor(&quot;#0cd341&quot;));</li>
+</ul></li>
+<li>Set sent message indicator color
+<ul>
+<li>style.setConvStateSentColor(Color.parseColor(&quot;#40000000&quot;));</li>
+</ul></li>
+<li>Set delivered message indicator color
+<ul>
+<li>style.setConvStateDeliveredColor(Color.parseColor(&quot;#40000000&quot;));</li>
+</ul></li>
+<li>Set read message indicator color
+<ul>
+<li>style.setConvStateReadColor(Color.parseColor(&quot;#ff7ea8ef&quot;));</li>
+</ul></li>
+<li>Set media chat message date icon color
+<ul>
+<li>style.setConvMediaDateBgColor(Color.parseColor(&quot;#99000000&quot;));</li>
+</ul></li>
+<li>Set pending media chat message indicator color
+<ul>
+<li>style.setConvMediaStatePendingColor(Color.parseColor(&quot;#ffffff&quot;));</li>
+</ul></li>
+<li>Set sent media chat message indicator color
+<ul>
+<li>style.setConvMediaStateSentColor(Color.parseColor(&quot;#ffffff&quot;));</li>
+</ul></li>
+<li>Set deliver media chat message indicator color
+<ul>
+<li>style.setConvMediaStateDeliveredColor(Color.parseColor(&quot;#ffffff&quot;));</li>
+</ul></li>
+<li>Set read media chat message indicator color
+<ul>
+<li>style.setConvMediaStateReadColor(Color.parseColor(&quot;#ff7ea8ef&quot;));</li>
+</ul></li>
+<li>Set favorite chat message icon color
+<ul>
+<li>style.setConvLikeColor(Color.parseColor(&quot;#e2264d&quot;));<br />
+<img src="/img/android/StyleDocumentImages/chat/ChatDetail.png" alt=""></li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/Android/tokenBaseAuth"><span class="arrow-prev">← </span><span>Token Base Authentication</span></a><a class="docs-next button" href="/docs/en/iOS/iOS"><span>How to configure Diyalog</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-use-custom-style">How to use custom style?</a></li><li><a href="#more-options">More options?</a><ul class="toc-headings"><li><a href="#1-general"><strong>1. General</strong></a></li><li><a href="#2-customise-toolbar"><strong>2. Customise toolbar</strong></a></li><li><a href="#3-setting"><strong>3. Setting</strong></a></li><li><a href="#4-dividers"><strong>4. Dividers</strong></a></li><li><a href="#5-text-color"><strong>5. Text color</strong></a></li><li><a href="#6-contact-screencontact-tab-of-main-screen"><strong>6. Contact screen(contact tab of main screen)</strong></a></li><li><a href="#7-chat-screen-chat-tab-from-home-screen"><strong>7. Chat screen (Chat tab from home screen)</strong></a></li><li><a href="#8-friends-profile-group-profile"><strong>8. Friends Profile/ Group profile</strong></a></li><li><a href="#9-group-profile"><strong>9. Group profile</strong></a></li><li><a href="#10-conversationchat-detail"><strong>10. Conversation(Chat Detail)</strong></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.png" alt="Diyalog" width="66" height="52"/></a><div><h5>Docs</h5><a href="/docs/en/Android/doc_getting_started">Android</a><a href="/docs/en/iOS/iOS">iOS</a></div><div><h5>Community</h5><a href="https://landing.diyalog.im/#features" target="_blank" rel="noreferrer noopener">User Features</a><a href="https://landing.diyalog.im/#whyus" target="_blank" rel="noreferrer noopener">Why Diyalog</a><a href="https://landing.diyalog.im/#packages" target="_blank" rel="noreferrer noopener">packages</a><a href="https://landing.diyalog.im/#apisection" target="_blank" rel="noreferrer noopener">Dialog API and SDK</a><a href="https://landing.diyalog.im/#contact" target="_blank" rel="noreferrer noopener">contact</a></div><div><h5>More</h5><a href="https://github.com/diyalog-im/diyalog-platform" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 Diyalog - All Rights Reserved</section></footer></div></body></html>
