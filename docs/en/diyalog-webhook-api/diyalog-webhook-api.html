@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Diyalog-Integration-With-Domain · Diyalog</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;###APIs that should be implemented on Enterprise Applications&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Diyalog-Integration-With-Domain · Diyalog"/><meta property="og:type" content="website"/><meta property="og:url" content="https://diyalog-im.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;###APIs that should be implemented on Enterprise Applications&lt;/p&gt;
+"/><meta property="og:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/big_logo_wihte.png" alt="Diyalog"/><h2 class="headerTitleWithLogo">Diyalog</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/GettingStarted/overview" target="_self">Docs</a></li><li class=""><a href="https://github.com/diyalog-im/diyalog-platform" target="_self">GitHub</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Integration With Domain</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/GettingStarted/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/en/GettingStarted/getstarted">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/Android/doc_getting_started">How to configure Diyalog</a></li><li class="navListItem"><a class="navItem" href="/docs/en/Android/tokenBaseAuth">Token Base Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/en/Android/doc_style">Diyalog Android SDK Style</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/iOS/iOS">How to configure Diyalog</a></li><li class="navListItem"><a class="navItem" href="/docs/en/iOS/TokenBaseAuthentication">Token Base Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/en/iOS/RichView">Richiew Notificaion Support</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Cordova plugin</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/HowToUseCordova">How to add Cordova plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/CreateCordovaPlugin/CreateCordovaPlugin">How to create Cordova plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/CreateIonicProject/CreateIonicProject">How to create ionic project</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Web SDK</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/WebSdk">How to use WEB SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenDiyalogSDK/OpenDiyalogSDK">Use Web SDK Javascript from My Web App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenInDiyalogSDKAngularJSApp/OpenInDiyalogSDKAngularJSApp">Use Web SDK from AngularJS Web App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenInIFrame/OpenInIFrame">Add Web App to an IFrame</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Messaging API</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/diyalog-messaging-api/diyalog-messaging-api">Messaging API Reference</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration With Domain</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/diyalog-webhook-api/diyalog-webhook-api">Diyalog-Integration-With-Domain</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Diyalog-Integration-With-Domain</h1></header><article><div><span><p>###APIs that should be implemented on Enterprise Applications</p>
+<p><strong>/checkauthtoken</strong></p>
+<blockquote>
+<p>This rest api will check Diyalog Server's token of user.</p>
+<p>#####BaseUrl</p>
+<p><code>https://domain.token.validation.server/v1/</code></p>
+<p><strong>/checkauthtoken parameters and JSON fields</strong></p>
+<p>The following parameters are send to enterprise token server in JSON format by POST method by Diyalog server.</p>
+<p>Name          |     Type     | Description                      |Required |
+|:---------------|:-------------|:---------------------------------|:---------|
+| <strong>deviceId</strong>   |  String      |Enterprise device ID              | yes      |
+| <strong>dlgToken</strong>   |  String      |Token that created for DiyalogSDK | yes      |
+| <strong>customerNo</strong> |  String      |Enterprise customer no            | yes      |</p>
+</blockquote>
+<blockquote>
+<p>POST Request Sample</p>
+</blockquote>
+<pre><code class="hljs"> POST https://domain.token.validation.server/v1/checkauthtoken
+ Headers :
+ Auth-Token : THIS_IS_YOUR_API_TOKEN_FOR_DLG_SERVER_AUTHORISATION
+ Content-Type: application/json
+ POST body:
+ {
+    &quot;deviceId&quot;:&quot;123456789aacaaca&quot;,
+    &quot;dlgToken&quot;:&quot;2121sasasrwsdssfdrsdaasdasdadasdasdasdasd&quot;,
+    &quot;customerNo&quot;:&quot;1234567&quot;
+ }
+</code></pre>
+<blockquote>
+<p>POST Response</p>
+<p>Response will be text format. Possible values are :</p>
+<pre><code class="hljs">  Validated
+  ExpiredCode
+  InvalidCode
+  InvalidHash
+  InternalError
+</code></pre>
+</blockquote>
+<p><strong>/updatemokstatus</strong></p>
+<blockquote>
+<p>This rest api will update status of MOK Push on Security server</p>
+<p>#####BaseUrl</p>
+<p><code>https://domain.token.validation.server/v1/</code></p>
+<p><strong>/updatemokstatus parameters and JSON fields</strong></p>
+<p>The following parameters are send to enterprise server in JSON format by POST method by Diyalog server.</p>
+<p>Name          |     Type     |Description                      |Required |
+|:---------------|:-------------|:---------------------------------|:---------|
+| <strong>messageId</strong>  |  String      |This field is unique push message id which is created by enterprise server. |yes      |
+| <strong>status</strong>     |  String      |It is status of the push message (Approved,Cancelled,SentToUser,ReceivedByUser,ReadByUser) | yes      |
+| <strong>customerNo</strong> |  String      |it is customer number that push message is sent | yes      |
+| <strong>secretData</strong> |  String      |This is used for MOK message. It is MOK data that signed by user device's private key |yes      |</p>
+</blockquote>
+<blockquote>
+<p>Possible values of <strong>status</strong> field are :</p>
+<p>Statuses       |  Description|
+|:---------------|:-------------|
+|   Approved   | User pressed approved button or auto approved if user's application is active for seeamless integration. |
+|Cancelled | If user pressed cancel button of the push message |
+|   SentToUser| If push message send to push provider (Apple APNS or Google FireBase server). In this status, push may not be received by user.|
+| ReceivedByUser| If push message is delivered to user's phone exactly.|
+|ReadByUser |User open push message in the application and read it.|
+|Timeout|If push is not sent or received to user in a interval, status will updated as timeout.|</p>
+</blockquote>
+<blockquote>
+<p>POST Request Sample</p>
+</blockquote>
+<pre><code class="hljs"> POST https://domain.token.validation.server/v1/updatemokstatus
+ Headers :
+ Auth-Token : THIS_IS_YOUR_API_TOKEN_FOR_DLG_SERVER_AUTHORISATION
+ Content-Type: application/json
+ POST body:
+ {
+    &quot;messageId&quot;:&quot;123456789aacaaca&quot;,
+    &quot;status&quot;:&quot;ReceivedByUser&quot;,
+    &quot;customerNo&quot;:&quot;1234567&quot;,
+    &quot;secretData&quot;: &quot;&quot;,
+ }
+</code></pre>
+<blockquote>
+</blockquote>
+<pre><code class="hljs"> POST https://domain.token.validation.server/v1/updatemokstatus
+ Headers :
+ Auth-Token : THIS_IS_YOUR_API_TOKEN_FOR_DLG_SERVER_AUTHORISATION
+ Content-Type: application/json
+ POST body:
+ {
+    &quot;messageId&quot;:&quot;123456789aacaaca&quot;,
+    &quot;status&quot;:&quot;Approved&quot;,
+    &quot;customerNo&quot;:&quot;1234567&quot;,
+    &quot;secretData&quot;: &quot;ababccff12a412212121542121212121&quot;,
+ }
+</code></pre>
+<blockquote>
+<p>POST Response</p>
+<p>Response will be text format. Possible values are :</p>
+<pre><code class="hljs">  OK
+</code></pre>
+</blockquote>
+<p>###APIs that should be implemented on Enterprise Applications</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/diyalog-messaging-api/diyalog-messaging-api"><span class="arrow-prev">← </span><span>Messaging API Reference</span></a><a class="docs-next button" href="/docs/en/privacy_terms/privacy_terms"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.png" alt="Diyalog" width="66" height="52"/></a><div><h5>Docs</h5><a href="/docs/en/GettingStarted/overview">Getting Started</a><a href="/docs/en/Android/doc_getting_started">Android</a><a href="/docs/en/iOS/iOS">iOS</a><a href="/docs/en/cordovaPlugin/HowToUseCordova">Cordova plugin</a><a href="/docs/en/diyalogWebSdk/WebSdk">Web SDK</a><a href="/docs/en/diyalog-messaging-api/diyalog-messaging-api">Messaging API</a><a href="/docs/en/diyalog-webhook-api/diyalog-webhook-api">Integration With Domain</a></div><div><h5>Community</h5><a href="https://landing.diyalog.im/#features" target="_blank" rel="noreferrer noopener">User Features</a><a href="https://landing.diyalog.im/#whyus" target="_blank" rel="noreferrer noopener">Why Diyalog</a><a href="https://landing.diyalog.im/#packages" target="_blank" rel="noreferrer noopener">packages</a><a href="https://landing.diyalog.im/#apisection" target="_blank" rel="noreferrer noopener">Dialog API and SDK</a><a href="https://landing.diyalog.im/#contact" target="_blank" rel="noreferrer noopener">contact</a></div><div><h5>More</h5><a href="https://github.com/diyalog-im/diyalog-platform" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright"><div>Copyright © 2019 Diyalog - All Rights Reserved</div><div><a href="/docs/en/privacy_terms/privacy">Privacy  &amp; Terms</a></div></section></footer></div></body></html>

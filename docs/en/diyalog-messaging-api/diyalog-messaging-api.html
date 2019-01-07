@@ -1,0 +1,419 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Diyalog Messenger Platform Messaging API Reference · Diyalog</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;1-sending-messages&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#1-sending-messages&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Sending Messages&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Diyalog Messenger Platform Messaging API Reference · Diyalog"/><meta property="og:type" content="website"/><meta property="og:url" content="https://diyalog-im.github.io/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;1-sending-messages&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#1-sending-messages&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Sending Messages&lt;/h2&gt;
+"/><meta property="og:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/big_logo_wihte.png" alt="Diyalog"/><h2 class="headerTitleWithLogo">Diyalog</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/GettingStarted/overview" target="_self">Docs</a></li><li class=""><a href="https://github.com/diyalog-im/diyalog-platform" target="_self">GitHub</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Messaging API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/GettingStarted/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/en/GettingStarted/getstarted">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/Android/doc_getting_started">How to configure Diyalog</a></li><li class="navListItem"><a class="navItem" href="/docs/en/Android/tokenBaseAuth">Token Base Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/en/Android/doc_style">Diyalog Android SDK Style</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/iOS/iOS">How to configure Diyalog</a></li><li class="navListItem"><a class="navItem" href="/docs/en/iOS/TokenBaseAuthentication">Token Base Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/en/iOS/RichView">Richiew Notificaion Support</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Cordova plugin</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/HowToUseCordova">How to add Cordova plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/CreateCordovaPlugin/CreateCordovaPlugin">How to create Cordova plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/CreateIonicProject/CreateIonicProject">How to create ionic project</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Web SDK</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/WebSdk">How to use WEB SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenDiyalogSDK/OpenDiyalogSDK">Use Web SDK Javascript from My Web App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenInDiyalogSDKAngularJSApp/OpenInDiyalogSDKAngularJSApp">Use Web SDK from AngularJS Web App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenInIFrame/OpenInIFrame">Add Web App to an IFrame</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Messaging API</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/diyalog-messaging-api/diyalog-messaging-api">Messaging API Reference</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration With Domain</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/diyalog-webhook-api/diyalog-webhook-api">Diyalog-Integration-With-Domain</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Diyalog Messenger Platform Messaging API Reference</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="1-sending-messages"></a><a href="#1-sending-messages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Sending Messages</h2>
+<p>Many types of content can be sent with Diyalog Messenger Platform including text, audio, images, video, files.</p>
+<p>There are also some pre-defined messages templates available. You can send structured messages for a good user experience. All these messaging templates are copied from Facebook Messenger :smiley: in order to compatibility with fb messenger. Therefore, you can directly integrate your as is facebook bot application to Diyalog Messenger platform.</p>
+<h5><a class="anchor" aria-hidden="true" id="supported-templates"></a><a href="#supported-templates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported Templates</h5>
+<ul>
+<li>Generic Template</li>
+<li>Button Template</li>
+<li>Quick Reply Template</li>
+<li>List Template ( not available yet)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="11-send-api-reference"></a><a href="#11-send-api-reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.1 Send API Reference</h3>
+<h5><a class="anchor" aria-hidden="true" id="request-uri"></a><a href="#request-uri" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request URI</h5>
+<pre><code class="hljs">https:<span class="hljs-regexp">//</span>&lt;DIYALOG-SERVER-API-ENDPOINT&gt;<span class="hljs-regexp">/v1/</span>bots<span class="hljs-regexp">/sendmessage/</span>&lt;YOUR-BOT-ACCESS-TOKEN&gt;
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example-request"></a><a href="#example-request" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Request</h5>
+<pre><code class="hljs css language-bash">curl -X POST -H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">'{
+    "recipient":    {
+        "appCustomerId":"1231231"
+    },
+    "message":{
+        "text":"hello world",
+        "quick_replies":[]
+    }
+}'</span> <span class="hljs-string">"https://&lt;DIYALOG-SERVER-API-ENDPOINT&gt;/v1/bots/sendmessage/&lt;YOUR-BOT-ACCESS-TOKEN&gt;"</span>
+
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="properties"></a><a href="#properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Properties</h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>recipient</td><td>Object</td><td>recipient object</td><td>yes</td></tr>
+<tr><td>message</td><td>Object</td><td>message objecy</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="recipient"></a><a href="#recipient" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>recipient</em></h5>
+<p>It declares the recipient of the message. Request must include one of <em>id</em>, <em>appCustomerId</em></p>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>recipient.id</td><td>String</td><td>It is id of user in Diyalog platform. If you know it, you can directly use Diyalog user id.</td><td>Optional</td></tr>
+<tr><td>receipient.appCustomerId</td><td>String</td><td>You can use direct customer id of your system. But Diyalog seesion should be created with this customer id. If you are using Token base authentication of DiyalogSDK in your client application, system will create user and save the customer id.</td><td>Optional</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="message"></a><a href="#message" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>message.messaging_type</td><td>String</td><td>Not Appicable - It is fb messenger default. It will be used later version of Diyalog Platform.</td><td>No</td></tr>
+<tr><td>message.tag</td><td>String</td><td>Not Appicable - It is fb messenger default. It will be used later version of Diyalog Platform.</td><td>No</td></tr>
+<tr><td>message.text</td><td>String</td><td>it is text message that will send to recipient. If you send text message you should set it, for other type of messages, you shoud set <strong>attachment</strong> property instead of <strong>text</strong>.</td><td>Optional</td></tr>
+<tr><td>message.attachment</td><td>Object</td><td>it is used to define message content other than text messages. If you want to send message other than text you should set <strong>attachment</strong> property instead of <strong>text</strong>.</td><td>Optional</td></tr>
+<tr><td>message.quick_replies</td><td>Array&lt;<a href="#quick_reply">quick_reply</a>&gt;</td><td>it is used to send user quick reply buttons to user. If there is no any button you should send empty array obejct ([]).</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="attachment"></a><a href="#attachment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>attachment</em></h5>
+<p>The following can be included in the attachment object:</p>
+<ul>
+<li>Rich media messages including images, audios, videos, or files.</li>
+<li>Templates including generic template, button template, list template.</li>
+</ul>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>attachment.type</td><td>String</td><td>Type of attachment, may be image, audio, video, file or template</td><td>yes</td></tr>
+<tr><td>attachment.payload</td><td>Object</td><td>Payload of the attaachment</td><td>yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="12-response"></a><a href="#12-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.2 Response</h3>
+<p>A successful Send API request returns a JSON string containing identifiers for the message and its recipient.</p>
+<pre><code class="hljs">{
+   <span class="hljs-attr">"recipient_id"</span>: <span class="hljs-string">"2074022437"</span>,
+   <span class="hljs-attr">"message_id"</span>: <span class="hljs-string">"-7523925115459309081"</span>
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="properties-1"></a><a href="#properties-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Properties</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>recipient_id</td><td>String</td><td>Unique user id that message sent in Diyalog platform</td></tr>
+<tr><td>message_id</td><td>Object</td><td>Unique id of the sent message in Diyalog Platform</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="2template-reference"></a><a href="#2template-reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.Template Reference</h2>
+<h3><a class="anchor" aria-hidden="true" id="21-generic-template-reference"></a><a href="#21-generic-template-reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1 Generic Template Reference</h3>
+<p align="center">
+  <img src="/img/messagingAPI/genericTemplateSS.png">
+</p>
+<p>The generic template allows you to send a structured message that includes an image, text and buttons. A generic template with multiple templates described in the elements array will send a horizontally scrollable carousel of items, each composed of an image, text and buttons. For complete implementation details, see Generic Template.</p>
+<h5><a class="anchor" aria-hidden="true" id="request-uri-1"></a><a href="#request-uri-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request URI</h5>
+<pre><code class="hljs">https:<span class="hljs-regexp">//</span>&lt;DIYALOG-SERVER-API-ENDPOINT&gt;<span class="hljs-regexp">/v1/</span>bots<span class="hljs-regexp">/sendmessage/</span>&lt;YOUR-BOT-ACCESS-TOKEN&gt;
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example-request-1"></a><a href="#example-request-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Request</h5>
+<pre><code class="hljs css language-bash">curl -X POST -H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">'{
+    "recipient":{
+        "appCustomerId":"1231231"
+    },
+    "message":{
+        "attachment":{
+            "type":"template",
+            "payload":{
+                "template_type":"generic",
+                "elements":[
+                    {
+                        "title":"Your Holiday Offer",
+                        "image_url":"https://diyalog.im/app/testmessage/testimages/generictemplate-6.jpg",
+                        "subtitle":"We have a special holiday offer for you. This holiday is for you.",
+                        "default_action":{
+                            "type":"web_url",
+                            "url":"https://defaulaction.com",
+                            "webview_height_ratio":"FULL"
+                        },
+                        "buttons":[
+                            {
+                                "type":"web_url",
+                                "title":"I am interested",
+                                "payload":"https://isbank.com.tr"
+                            },
+                            {
+                                "type":"postback",
+                                "title":"Cancel",
+                                "payload":"cancelled1"
+                            }
+                        ]
+                    }
+                ],
+                "buttons":[]
+            }
+        },
+        "quick_replies":[]
+    }
+}'</span> <span class="hljs-string">"https://&lt;DIYALOG-SERVER-API-ENDPOINT&gt;/v1/bots/sendmessage/&lt;YOUR-BOT-ACCESS-TOKEN&gt;"</span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example-response"></a><a href="#example-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Response</h5>
+<pre><code class="hljs css language-json">{
+   <span class="hljs-attr">"recipient_id"</span>: <span class="hljs-string">"2074022437"</span>,
+   <span class="hljs-attr">"message_id"</span>: <span class="hljs-string">"-7523925115459309081"</span>
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="recipient-1"></a><a href="#recipient-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>recipient</em></h5>
+<p>It declares the recipient of the message. Request must include one of <em>id</em>, <em>appCustomerId</em></p>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>String</td><td>It is id of user in Diyalog platform. If you know it, you can directly use Diyalog user id.</td><td>Optional</td></tr>
+<tr><td>appCustomerId</td><td>String</td><td>You can use direct customer id of your system. But Diyalog seesion should be created with this customer id. If you are using Token base authentication of DiyalogSDK in your client application, system will create user and save the customer id.</td><td>Optional</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="message-1"></a><a href="#message-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>attachment</td><td>Object</td><td>It contains payload od the generic template content</td><td>yes</td></tr>
+<tr><td>quick_replies</td><td>Array&lt;<a href="#quick_reply">quick_reply</a>&gt;</td><td>This property will not used in generic template. It should be set empty array. []</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="messageattachment"></a><a href="#messageattachment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message.attachment</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>type</td><td>String</td><td>Value must be <strong>template</strong></td><td>yes</td></tr>
+<tr><td>payload</td><td>Object</td><td>Payload of the generic template</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="messageattachmentpayload"></a><a href="#messageattachmentpayload" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message.attachment.payload</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>template_type</td><td>String</td><td>Value must be <strong>generic</strong></td><td>yes</td></tr>
+<tr><td>elements</td><td>Array&lt;<a href="#messageattachmentpayloadelements">element</a>&gt;</td><td>An array of element objects that describe instances of the generic template to be sent. Specifying multiple elements will send a horizontally scrollable carousel of templates. A maximum of 10 elements is supported.</td><td>yes</td></tr>
+<tr><td>buttons</td><td>Array&lt;<a href="#button">button</a>&gt;</td><td>This property will not used in generic template. It should be set empty array. []</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="messageattachmentpayloadelements"></a><a href="#messageattachmentpayloadelements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message.attachment.payload.elements</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>title</td><td>String</td><td>The title to display in the template.</td><td>Optional</td></tr>
+<tr><td>subtitle</td><td>String</td><td>The subtitle to display in the template.</td><td>Optional</td></tr>
+<tr><td>image_url</td><td>String</td><td>The URL of the image to display in the template.</td><td>Optional</td></tr>
+<tr><td>default_action</td><td>Object (<a href="#default_action">default_action</a>)</td><td>The default action executed when the template is tapped.</td><td>Optional</td></tr>
+<tr><td>buttons</td><td>Array&lt;<a href="#button">button</a>&gt;</td><td>An array of buttons to append to the template. A maximum of 3 buttons per element is supported. If you don't add any button you should set empty array [].</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="default-action"></a><a href="#default-action" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>default_action</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>type</td><td>String</td><td>Default action is only support url button. Value must be &quot;web_url&quot;.</td><td>yes</td></tr>
+<tr><td>url</td><td>String</td><td>The url address that will open when tapped to content</td><td>yes</td></tr>
+<tr><td>webview_height_ratio</td><td>String</td><td>Value must be *FULL&quot;</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="button"></a><a href="#button" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>button</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>type</td><td>String</td><td>Type of the button. It can be <strong>web_url</strong> and <strong>postback</strong></td><td>yes</td></tr>
+<tr><td>title</td><td>String</td><td>Button title that will show in the button text.</td><td>yes</td></tr>
+<tr><td>payload_hidden</td><td>Boolean</td><td>This flag is valid for postback type button. You may want to signed your postback data by client application secrets. If you set this flag is true, Diyalog client sdk will signed postback by calling your application extension that has signData method.</td><td>Optional</td></tr>
+<tr><td>payload</td><td>String</td><td>Payload data that you want to turn back to your application. This will only return, if button type is postback. In web url you can set it to empty string.</td><td>yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="22-button-template-reference"></a><a href="#22-button-template-reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2 Button Template Reference</h3>
+<p align="center">
+  <img src="/img/messagingAPI/buttontemplate.png">
+</p>
+<p>The button template allows you to send a structured message that includes text and buttons.</p>
+<p>The button template sends a text message with up to three attached buttons. This template is useful for offering the message recipient options to choose from, such as pre-determined responses to a question, or actions to take.</p>
+<h5><a class="anchor" aria-hidden="true" id="request-uri-2"></a><a href="#request-uri-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request URI</h5>
+<pre><code class="hljs">https:<span class="hljs-regexp">//</span>&lt;DIYALOG-SERVER-API-ENDPOINT&gt;<span class="hljs-regexp">/v1/</span>bots<span class="hljs-regexp">/sendmessage/</span>&lt;YOUR-BOT-ACCESS-TOKEN&gt;
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example-request-2"></a><a href="#example-request-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Request</h5>
+<pre><code class="hljs css language-bash">curl -X POST -H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">'{
+    "recipient": {
+     "appCustomerId": "1231231"
+    },
+    "message": {
+     "attachment": {
+       "type": "template",
+       "payload": {
+         "template_type": "button",
+         "text" : "How can I help you?",
+         "buttons" : [
+            {
+                "type" :"web_url",
+                "title" : "Send Me Receipt",
+                "payload" : "https://diyalog.im/sendreceipt"
+            },
+            {
+                "type" :"postback",
+                "title" : "New Transaction",
+                "payload" : "start_new_tx"
+            }
+        ],
+        "elements" : []
+       }
+     },
+     "quick_replies" : []
+    }
+    }'</span> <span class="hljs-string">"https://&lt;DIYALOG-SERVER-API-ENDPOINT&gt;/v1/bots/sendmessage/&lt;YOUR-BOT-ACCESS-TOKEN&gt;"</span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example-response-1"></a><a href="#example-response-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Response</h5>
+<pre><code class="hljs css language-json">{
+   <span class="hljs-attr">"recipient_id"</span>: <span class="hljs-string">"2074022437"</span>,
+   <span class="hljs-attr">"message_id"</span>: <span class="hljs-string">"-7523925115459309081"</span>
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="recipient-2"></a><a href="#recipient-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>recipient</em></h5>
+<p>It declares the recipient of the message. Request must include one of <em>id</em>, <em>appCustomerId</em></p>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>String</td><td>It is id of user in Diyalog platform. If you know it, you can directly use Diyalog user id.</td><td>Optional</td></tr>
+<tr><td>appCustomerId</td><td>String</td><td>You can use direct customer id of your system. But Diyalog seesion should be created with this customer id. If you are using Token base authentication of DiyalogSDK in your client application, system will create user and save the customer id.</td><td>Optional</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="message-2"></a><a href="#message-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>attachment</td><td>Object</td><td>It contains payload od the button template content</td><td>yes</td></tr>
+<tr><td>quick_replies</td><td>Array&lt;quick_reply&gt;</td><td>This property will not used in generic template. It should be set empty array. []</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="messageattachment-1"></a><a href="#messageattachment-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message.attachment</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>type</td><td>String</td><td>Value must be <strong>template</strong></td><td>yes</td></tr>
+<tr><td>payload</td><td>Object</td><td>Payload of the generic template</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="messageattachmentpayload-1"></a><a href="#messageattachmentpayload-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message.attachment.payload</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>template_type</td><td>String</td><td>Value must be <strong>button</strong></td><td>yes</td></tr>
+<tr><td>text</td><td>String</td><td>Message text that will show on top of the template</td><td>yes</td></tr>
+<tr><td>buttons</td><td>Array&lt;<a href="#button">button</a>&gt;</td><td>You can add buttons to your buton template message by adding button property to buttons array</td><td>yes</td></tr>
+<tr><td>elements</td><td>Array&lt;<a href="#messageattachmentpayloadelements">element</a>&gt;</td><td>This property will not used in generic template. It should be set empty array. []</td><td>yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="23-quick-reply-template-reference"></a><a href="#23-quick-reply-template-reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3 Quick Reply Template Reference</h3>
+<p align="center">
+  <img src="/img/messagingAPI/quickreply.png">
+</p>
+<p>Quick replies provide a way to present a set of up to 11 buttons in-conversation that contain a title and optional image, and appear prominently above the composer.</p>
+<h5><a class="anchor" aria-hidden="true" id="request-uri-3"></a><a href="#request-uri-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request URI</h5>
+<pre><code class="hljs">https:<span class="hljs-regexp">//</span>&lt;DIYALOG-SERVER-API-ENDPOINT&gt;<span class="hljs-regexp">/v1/</span>bots<span class="hljs-regexp">/sendmessage/</span>&lt;YOUR-BOT-ACCESS-TOKEN&gt;
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example-request-3"></a><a href="#example-request-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Request</h5>
+<pre><code class="hljs css language-bash">curl -X POST -H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">'{
+    "recipient": {
+     "appCustomerId": "1231232"
+    },
+    "message": {
+    "text" : "Do you want to continue?",
+     "quick_replies" : [
+        {
+            "content_type" : "text",
+            "title" : "Yes",
+            "payload" : "yes",
+            "image_url" : "https://diyalog.im/app/testmessage/testimages/quickreplytemplate-yes.png"
+        },
+        {
+            "content_type" : "text",
+            "title" : "No",
+            "payload" : "no",
+            "image_url" : "https://diyalog.im/app/testmessage/testimages/quickreplytemplate-no.png"
+        }
+     ]
+    }
+}'</span> <span class="hljs-string">"https://&lt;DIYALOG-SERVER-API-ENDPOINT&gt;/v1/bots/sendmessage/&lt;YOUR-BOT-ACCESS-TOKEN&gt;"</span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example-response-2"></a><a href="#example-response-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Response</h5>
+<pre><code class="hljs css language-json">{
+   <span class="hljs-attr">"recipient_id"</span>: <span class="hljs-string">"2074022437"</span>,
+   <span class="hljs-attr">"message_id"</span>: <span class="hljs-string">"-7523925115459309081"</span>
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="recipient-3"></a><a href="#recipient-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>recipient</em></h5>
+<p>It declares the recipient of the message. Request must include one of <em>id</em>, <em>appCustomerId</em></p>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>String</td><td>It is id of user in Diyalog platform. If you know it, you can directly use Diyalog user id.</td><td>Optional</td></tr>
+<tr><td>appCustomerId</td><td>String</td><td>You can use direct customer id of your system. But Diyalog seesion should be created with this customer id. If you are using Token base authentication of DiyalogSDK in your client application, system will create user and save the customer id.</td><td>Optional</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="message-3"></a><a href="#message-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>message</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>text</td><td>String</td><td>Message text that will show on top of the template</td><td>yes</td></tr>
+<tr><td>quick_replies</td><td>Array&lt;<a href="#quick_reply">quick_reply</a>&gt;</td><td>Array of quick reply definitions.</td><td>yes</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="quick-reply"></a><a href="#quick-reply" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>quick_reply</em></h5>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+</thead>
+<tbody>
+<tr><td>content_type</td><td>String</td><td>Value must be <strong>text</strong></td><td>yes</td></tr>
+<tr><td>title</td><td>String</td><td>Quick reply button label</td><td>yes</td></tr>
+<tr><td>payload</td><td>String</td><td>It is payload that will return to your application when pressed button</td><td>yes</td></tr>
+<tr><td>image_url</td><td>String</td><td>If you want to add icon to your quick reply button, you can set icon url</td><td>Optional</td></tr>
+</tbody>
+</table>
+<h2></h2>
+ <p align="center">
+   Made with :heart: by Ayya Co Ltd.
+ </p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/diyalogWebSdk/OpenInIFrame/OpenInIFrame"><span class="arrow-prev">← </span><span>Add Web App to an IFrame</span></a><a class="docs-next button" href="/docs/en/diyalog-webhook-api/diyalog-webhook-api"><span>Diyalog-Integration-With-Domain</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-sending-messages">1. Sending Messages</a><ul class="toc-headings"><li><a href="#11-send-api-reference">1.1 Send API Reference</a></li><li><a href="#12-response">1.2 Response</a></li></ul></li><li><a href="#2template-reference">2.Template Reference</a><ul class="toc-headings"><li><a href="#21-generic-template-reference">2.1 Generic Template Reference</a></li><li><a href="#22-button-template-reference">2.2 Button Template Reference</a></li><li><a href="#23-quick-reply-template-reference">2.3 Quick Reply Template Reference</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.png" alt="Diyalog" width="66" height="52"/></a><div><h5>Docs</h5><a href="/docs/en/GettingStarted/overview">Getting Started</a><a href="/docs/en/Android/doc_getting_started">Android</a><a href="/docs/en/iOS/iOS">iOS</a><a href="/docs/en/cordovaPlugin/HowToUseCordova">Cordova plugin</a><a href="/docs/en/diyalogWebSdk/WebSdk">Web SDK</a><a href="/docs/en/diyalog-messaging-api/diyalog-messaging-api">Messaging API</a><a href="/docs/en/diyalog-webhook-api/diyalog-webhook-api">Integration With Domain</a></div><div><h5>Community</h5><a href="https://landing.diyalog.im/#features" target="_blank" rel="noreferrer noopener">User Features</a><a href="https://landing.diyalog.im/#whyus" target="_blank" rel="noreferrer noopener">Why Diyalog</a><a href="https://landing.diyalog.im/#packages" target="_blank" rel="noreferrer noopener">packages</a><a href="https://landing.diyalog.im/#apisection" target="_blank" rel="noreferrer noopener">Dialog API and SDK</a><a href="https://landing.diyalog.im/#contact" target="_blank" rel="noreferrer noopener">contact</a></div><div><h5>More</h5><a href="https://github.com/diyalog-im/diyalog-platform" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright"><div>Copyright © 2019 Diyalog - All Rights Reserved</div><div><a href="/docs/en/privacy_terms/privacy">Privacy  &amp; Terms</a></div></section></footer></div></body></html>

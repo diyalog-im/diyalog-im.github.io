@@ -9,9 +9,7 @@ export default StyleSheet.create({
     "html": {
         "boxSizing": "border-box"
     },
-    "body": {
-        "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, Lucida Grande, Sans-Serif"
-    },
+    "body": {},
     "top": {
         "background": "linear-gradient( #40b7ed, #3ebfed)"
     }
