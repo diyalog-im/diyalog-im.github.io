@@ -1,0 +1,625 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Webhook · Diyalog</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Dlg Messaging Platform can feed many events and situations related to your bot to webhook that you create on your own servers. In this way, you can get the status of all messages you send to your users through your bot and the responses your users have written to these messages and you can take different actions according to these events. The platform will forward these events and conditions to your webhook by making a POST request.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Webhook · Diyalog"/><meta property="og:type" content="website"/><meta property="og:url" content="https://diyalog-im.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;Dlg Messaging Platform can feed many events and situations related to your bot to webhook that you create on your own servers. In this way, you can get the status of all messages you send to your users through your bot and the responses your users have written to these messages and you can take different actions according to these events. The platform will forward these events and conditions to your webhook by making a POST request.&lt;/p&gt;
+"/><meta property="og:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/big_logo_wihte.png" alt="Diyalog"/><h2 class="headerTitleWithLogo">Diyalog</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/GettingStarted/overview" target="_self">Docs</a></li><li class=""><a href="https://github.com/diyalog-im/diyalog-platform" target="_self">GitHub</a></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/tr/webhook/webhook">Türkçe</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Webhook</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/GettingStarted/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/en/GettingStarted/getstarted">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/Android/doc_getting_started">How to configure Diyalog</a></li><li class="navListItem"><a class="navItem" href="/docs/en/Android/tokenBaseAuth">Token Base Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/en/Android/doc_style">Diyalog Android SDK Style</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/iOS/iOS">How to configure Diyalog</a></li><li class="navListItem"><a class="navItem" href="/docs/en/iOS/TokenBaseAuthentication">Token Base Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/en/iOS/RichView">Richiew Notificaion Support</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Cordova plugin</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/HowToUseCordova">How to add Cordova plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/CreateCordovaPlugin/CreateCordovaPlugin">How to create Cordova plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/en/cordovaPlugin/CreateIonicProject/CreateIonicProject">How to create ionic project</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Web SDK</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/WebSdk">How to use WEB SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenDiyalogSDK/OpenDiyalogSDK">Use Web SDK Javascript from My Web App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenInDiyalogSDKAngularJSApp/OpenInDiyalogSDKAngularJSApp">Use Web SDK from AngularJS Web App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/diyalogWebSdk/OpenInIFrame/OpenInIFrame">Add Web App to an IFrame</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Messaging API</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/diyalog-messaging-api/diyalog-messaging-api">Messaging API Reference</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Webhook</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/webhook/webhook">Webhooks</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration With Domain</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/diyalog-webhook-api/diyalog-webhook-api">Diyalog-Integration-With-Domain</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Webhook</h1></header><article><div><span><p>Dlg Messaging Platform can feed many events and situations related to your bot to webhook that you create on your own servers. In this way, you can get the status of all messages you send to your users through your bot and the responses your users have written to these messages and you can take different actions according to these events. The platform will forward these events and conditions to your webhook by making a POST request.</p>
+<ul>
+<li><a href="#how-to-configure-webHook">How to Configure WebHook?</a></li>
+<li><a href="#webhook-events">Webhook Events</a></li>
+<li><a href="#event-format">Event Format</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="how-to-configure-webhook"></a><a href="#how-to-configure-webhook" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to Configure WebHook?</h2>
+<p>You can only configure your bot by entering the following configuration parameters in the server.conf file of the dialog-server application.</p>
+<pre><code class="hljs">modules {
+    webbots {
+        info : [
+            {
+                botUserName : &quot;your_bot_username&quot;,
+                webhook : {
+                    id : &quot;id_of_your_webhook&quot;,
+                    url : &quot;http://my_sample_webhook_url.com/&quot;,
+                    app_secret : &quot;ffeceefiaae0aec8naich2queid1thoohi3pohSah7ohgaedaengiethah1ahthuumee12affcqq12&quot;,
+                    verify_token : &quot;&quot;,
+                    subscribed_webhook_events : [&quot;MessageEchoes&quot;,MessageDeliveries&quot;,&quot;MessageReads&quot;,&quot;Messages&quot;]
+                }
+            },
+            ...
+        ]
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr><th>Configuration</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>botUserName</td><td>The username of your Webbot. This should be the username information entered by admin when creating the bot.</td></tr>
+<tr><td>id</td><td>This information is passed back to your webhook. In this way, if you have more than one webbot in the system and all meet the same webhook with this id you can distinguish. If you wish, you can provide a single webhook id for all your webbots. It all depends on the webhook you develop.</td></tr>
+<tr><td>url</td><td>URL address of your Webhook. The Dlg Platform will send requests to this url.</td></tr>
+<tr><td>app_secret</td><td>Used to validate requests from the DLG platform. With the app secret value that you specify, Dlg Platform creates the SHA1 HMAC of each message it sends to you and adds this value as &quot;X-Signature&quot; to the header of the request. You can verify incoming requests by checking the HMAC.</td></tr>
+<tr><td>verify_token</td><td>Using this information, your webhook will validate the Dlg Platform, but its development has not yet completed.</td></tr>
+<tr><td>subscribed_webhook_events</td><td>The Dlg Platform only transmits events that you subscribe to. You can define these events to the system with this parameter. You can enter at least one or all of the values of &quot;MessageDeliveries&quot;, &quot;MessageReads&quot;, &quot;MessageEchoes&quot; as an array, and subscribe to events.</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="webhook-events"></a><a href="#webhook-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Webhook Events</h2>
+<p>Below are the types of events you can get from the Dlg Platform. Different and new events will be added later.
+All of the events or subscribed events will be forward to your webhook by the platform.</p>
+<table>
+<thead>
+<tr><th>Webhook Event</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>MessageEchoes</td><td>When you subscribe to this event, you can receive information that messages are sent to the recipient</td></tr>
+<tr><td>MessageDeliveries</td><td>If you subscribe to this event, you can receive the message ids information that has been strictly received by the recipients via your webbot.</td></tr>
+<tr><td>MessageReads</td><td>If you subscribe to this event, you can receive the message ids information that has been read by the recipients via your webbot.</td></tr>
+<tr><td>Messages</td><td>When users write to you, they are delivered to your webhook via your webhook. To receive these messages, you must subscribe to this event.</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="event-format"></a><a href="#event-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event Format</h2>
+<p>All webhook events are delivered to your webhook in the following format.
+In this format, your webhook id information, sender bot id, receiver id number, customer number, event forwarding time are included in each event type. The content of the event varies by event type.
+In another matter, the DLG platform collects a maximum of 10 events and transmits them at once, instead of sending each event to your system one by one. Of course, if 10 events have not accumulated within 5 seconds, it will forward the events that have occurred so far to your webhook.
+All events are sent in the ** entry ** array object.</p>
+<p>Here is an example event format.</p>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560172933001,
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },              
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560172926374,
+
+          ...              
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<p>The meaning of the parameters of the above json object is as follows.</p>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>object</td><td>String</td><td>By default, this field will return to you as &quot;dialog&quot;.</td></tr>
+<tr><td>entry</td><td>Array&lt;<a href="#entry">entry</a>&gt;</td><td>This field is the array where events are passed. One or more event objects will be sent to you. You can receive at least one and up to 10 events from each entry.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="entry"></a><a href="#entry" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>entry</h3>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>String</td><td>The ID information you gave during the configuration for your Webbot is sent back to you through this field.</td></tr>
+<tr><td>time</td><td>Number</td><td>The sent time of the event to your webhook by the Dlg Platform (epoch milliseconds)</td></tr>
+<tr><td>messaging</td><td>Array&lt;<a href="#messaging">messaging</a>&gt;</td><td>An array containing each event information. For future reference, this is designed as an array, but will only be passed to you with one object. Therefore, you can take the first element and use it.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="messaging"></a><a href="#messaging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>messaging</h3>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>sender</td><td>&lt;<a href="#sender">sender</a>&gt;</td><td>Webbot's information</td></tr>
+<tr><td>recipient</td><td>&lt;<a href="#recipient">recipient</a>&gt;</td><td>Recipient's information</td></tr>
+<tr><td>timestamp</td><td>Number</td><td>Event time (epoch miliseconds)</td></tr>
+<tr><td>Event Datası</td><td><a href="#event-data">Event Data</a></td><td>The event content is different for each event.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sender"></a><a href="#sender" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sender</h3>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>String</td><td>It is the unique id information of Webbot on the Dlg platform.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="recipient"></a><a href="#recipient" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>recipient</h3>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>appCustomerId</td><td>String</td><td>The customer number of the user to whom the message was delivered.</td></tr>
+<tr><td>id</td><td>String</td><td>The unique id information of the user on the DLG platform to which the message is delivered.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="event-data"></a><a href="#event-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event Data</h3>
+<p><strong>MessageEchoes</strong></p>
+<p>Message Echo event is the event that occurs when the message is sent to the user via the bot.
+This event indicates to the user that the message was sent. This does not mean that the event has been delivered to the user.</p>
+<p>The content of the sample MessageEcho is as follows.</p>
+<pre><code class="hljs">  &quot;messageEcho&quot;: {
+    &quot;app_id&quot;: 1614379680,
+    &quot;is_echo&quot;: true,
+    &quot;mid&quot;: &quot;messageId-92&quot;
+  }
+</code></pre>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app_id</td><td>String</td><td>It is the unique id information of Webbot on the Dlg platform.</td></tr>
+<tr><td>is_echo</td><td>Boolean</td><td>Default returns true.</td></tr>
+<tr><td>mid</td><td>String</td><td>id of the message</td></tr>
+</tbody>
+</table>
+<p>Below is an example entry for the MessageEcho event.</p>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560172933001,
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },              
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560172926374,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-92&quot;
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<p><strong>MessageDeliveries</strong></p>
+<p>The Message Deliveries event is the event that occurs when message or messages are delivered to recipient via the bot.
+When this event is forwarded to your webhook, all messages with IDs in the event have been delivered to the user.</p>
+<p>Sample delivery content is as follows.</p>
+<pre><code class="hljs">  &quot;delivery&quot;: {
+    &quot;mids&quot;: [
+      &quot;messageId-92&quot;
+    ],
+    &quot;watermark&quot;: 1560195968593
+  }
+</code></pre>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>mids</td><td>Array[String]</td><td>An array containing the message ids of messages forwarded to the user. All message ids in this array are delivered to the user.</td></tr>
+<tr><td>watermark</td><td>Number</td><td>The time of the delivery event (epoch milliseconds). All messages before this time in this parameter have been delivered.</td></tr>
+</tbody>
+</table>
+<p>Below is an example entry for the MessageDeliveries event.</p>
+<pre><code class="hljs">{
+   &quot;object&quot;: &quot;dialog&quot;,
+   &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560195973608,
+
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560172926374,
+          
+          &quot;delivery&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-92&quot;,
+              &quot;messageId-93&quot;
+            ],
+            &quot;watermark&quot;: 1560195968593
+          }
+        }
+      ]
+    }
+  ]
+}    
+</code></pre>
+<p><strong>MessageReads</strong></p>
+<p>This event is forwarded to your webhook when the user reads the messages.</p>
+<p>Example read content is as follows.</p>
+<pre><code class="hljs"> &quot;reads&quot;: {
+    &quot;mids&quot;: [
+      &quot;messageId-92&quot;
+    ],
+    &quot;watermark&quot;: 1560197145045
+  }
+</code></pre>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>mids</td><td>Array[String]</td><td>An array containing the message ids that the user read. All message ids in this array have been read by the user.</td></tr>
+<tr><td>watermark</td><td>Number</td><td>The time of the read event (epoch milliseconds). All messages before this time in this parameter have been read.</td></tr>
+</tbody>
+</table>
+<p>Below is an example entry for the MessageReads event.</p>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560197150060,
+
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+
+          &quot;timestamp&quot;: 1560197145045,
+          
+          &quot;reads&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-92&quot;
+            ],
+            &quot;watermark&quot;: 1560197145045
+          }
+        }
+      ]
+    }
+  ]
+}  
+</code></pre>
+<p><strong>Messages</strong></p>
+<p>When the user responds to your webbot, this event will send the user message to your webhook.</p>
+<p>Example message content is as follows.</p>
+<pre><code class="hljs">  &quot;message&quot;: {
+    &quot;mid&quot;: &quot;messageId-92&quot;,
+    &quot;text&quot;: &quot;Hello&quot;
+  }
+</code></pre>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>mid</td><td>String</td><td>The id of the last message delivered to the user. The user has replied to this message.</td></tr>
+<tr><td>text</td><td>String</td><td>This is the content of the user's response.</td></tr>
+</tbody>
+</table>
+<p>Below is an example entry for the Messages event.</p>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560198179122,
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560198174092,
+          
+          &quot;message&quot;: {
+            &quot;mid&quot;: &quot;messageId-92&quot;,
+            &quot;text&quot;: &quot;Hello&quot;
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="some-sample-event-requests"></a><a href="#some-sample-event-requests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Some Sample Event Requests</h2>
+<ol>
+<li>When a message is forwarded to the user by the bot, the MessageEchoes and MessageDeliveries event are normally forwarded to the webhook as follows.</li>
+</ol>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199033954,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199028642,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-101&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199033954,
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199028982,
+          
+          &quot;delivery&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-101&quot;
+            ],
+            &quot;watermark&quot;: 1560199028982
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<ol start="2">
+<li>Another example is that the user can receive messages via webbot and read them instantly while the chat screen is open. In this case you will get an event content like the one below.</li>
+</ol>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199722035,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199716748,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-102&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199722035,
+
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199717421,
+          
+          &quot;delivery&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-102&quot;
+            ],
+            &quot;watermark&quot;: 1560199717421
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199722035,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199717448,
+
+          &quot;reads&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-102&quot;
+            ],
+            &quot;watermark&quot;: 1560199717448
+          }
+        }
+      ]
+    }
+  ]
+} 
+</code></pre>
+<ol start="3">
+<li>You can send messages to multiple users at the same time. In the sample event request below, webbot sent a message to customer numbers 70021 and 70022 at approximately same times and a message was sent to customer 70021 but not yet to customer 70022.</li>
+</ol>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560200490563,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;timestamp&quot;: 1560200485050,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-103&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560200490563,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70022&quot;,
+            &quot;id&quot;: &quot;1588406039&quot;
+          },
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;timestamp&quot;: 1560200488953,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-101&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560200490563,
+      &quot;messaging&quot;: [
+        {
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;timestamp&quot;: 1560200485546,
+          &quot;delivery&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-103&quot;
+            ],
+            &quot;watermark&quot;: 1560200485546
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<ol start="4">
+<li><p>Another example is to send messages to the user, but the user read the messages sent to him after a while. In this case, only the reading events will be as follows when the user reads the messages.
+As it can be seen from the content below, the user has read the message id messageId-103, messageId-104 and messageId-105.</p>
+<p>{
+&quot;object&quot;: &quot;dialog&quot;,
+&quot;entry&quot;: [
+{
+&quot;id&quot;: &quot;OTP&quot;,
+&quot;time&quot;: 1560201130747,</p>
+<pre><code class="hljs">   &quot;messaging&quot;: [
+     {
+       &quot;sender&quot;: {
+         &quot;id&quot;: &quot;1614379680&quot;
+       },
+       &quot;recipient&quot;: {
+         &quot;appCustomerId&quot;: &quot;70021&quot;,
+         &quot;id&quot;: &quot;243540663&quot;
+       },
+       &quot;timestamp&quot;: 1560201125731,
+       
+       &quot;reads&quot;: {
+         &quot;mids&quot;: [
+           &quot;messageId-103&quot;,
+           &quot;messageId-104&quot;,
+           &quot;messageId-105&quot;
+         ],
+         &quot;watermark&quot;: 1560201125731
+       }
+     }
+   ]
+ }
+</code></pre>
+<p>]
+}</p></li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/diyalog-messaging-api/diyalog-messaging-api"><span class="arrow-prev">← </span><span>Messaging API Reference</span></a><a class="docs-next button" href="/docs/en/diyalog-webhook-api/diyalog-webhook-api"><span>Diyalog-Integration-With-Domain</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-configure-webhook">How to Configure WebHook?</a></li><li><a href="#webhook-events">Webhook Events</a></li><li><a href="#event-format">Event Format</a><ul class="toc-headings"><li><a href="#entry">entry</a></li><li><a href="#messaging">messaging</a></li><li><a href="#sender">sender</a></li><li><a href="#recipient">recipient</a></li><li><a href="#event-data">Event Data</a></li></ul></li><li><a href="#some-sample-event-requests">Some Sample Event Requests</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.png" alt="Diyalog" width="66" height="52"/></a><div><h5>Docs</h5><a href="/docs/en/GettingStarted/overview">Getting Started</a><a href="/docs/en/Android/doc_getting_started">Android</a><a href="/docs/en/iOS/iOS">iOS</a><a href="/docs/en/cordovaPlugin/HowToUseCordova">Cordova plugin</a><a href="/docs/en/diyalogWebSdk/WebSdk">Web SDK</a><a href="/docs/en/diyalog-messaging-api/diyalog-messaging-api">Messaging API</a><a href="/docs/en/diyalog-webhook-api/diyalog-webhook-api">Integration With Domain</a></div><div><h5>Community</h5><a href="https://landing.diyalog.im/#features" target="_blank" rel="noreferrer noopener">User Features</a><a href="https://landing.diyalog.im/#whyus" target="_blank" rel="noreferrer noopener">Why Diyalog</a><a href="https://landing.diyalog.im/#packages" target="_blank" rel="noreferrer noopener">packages</a><a href="https://landing.diyalog.im/#apisection" target="_blank" rel="noreferrer noopener">Dialog API and SDK</a><a href="https://landing.diyalog.im/#contact" target="_blank" rel="noreferrer noopener">contact</a></div><div><h5>More</h5><a href="https://github.com/diyalog-im/diyalog-platform" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright"><div>Copyright © 2019 Diyalog - All Rights Reserved</div><div><a href="/docs/en/privacy_terms/privacy">Privacy  &amp; Terms</a></div></section></footer></div></body></html>

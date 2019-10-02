@@ -1,0 +1,598 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Webhook_tr · Diyalog</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Dlg Mesajlaşma Platformu kendi sunucularınızda oluşturduğunuz webhook&#x27;a, botunuz ile ilgili bir çok olay ve durumu besleyebilmektedir. Bu sayade bot&#x27;unuz üzerinden kullanıcılara ilettiğiniz tüm mesajların durumu ve bu mesajlara kullanıcılarınızın yazdığı cevapları alabilir ve bu eventlere göre değişik aksiyonlar alabilirsiniz. Platform bu olay ve durumları webhook&#x27;unuza POST isteği yaparak eletecektir.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Webhook_tr · Diyalog"/><meta property="og:type" content="website"/><meta property="og:url" content="https://diyalog-im.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;Dlg Mesajlaşma Platformu kendi sunucularınızda oluşturduğunuz webhook&#x27;a, botunuz ile ilgili bir çok olay ve durumu besleyebilmektedir. Bu sayade bot&#x27;unuz üzerinden kullanıcılara ilettiğiniz tüm mesajların durumu ve bu mesajlara kullanıcılarınızın yazdığı cevapları alabilir ve bu eventlere göre değişik aksiyonlar alabilirsiniz. Platform bu olay ve durumları webhook&#x27;unuza POST isteği yaparak eletecektir.&lt;/p&gt;
+"/><meta property="og:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://diyalog-im.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/big_logo_wihte.png" alt="Diyalog"/><h2 class="headerTitleWithLogo">Diyalog</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/GettingStarted/overview" target="_self">Docs</a></li><li class=""><a href="https://github.com/diyalog-im/diyalog-platform" target="_self">GitHub</a></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/tr/webhook/webhook_tr">Türkçe</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Webhook_tr</h1></header><article><div><span><p>Dlg Mesajlaşma Platformu kendi sunucularınızda oluşturduğunuz webhook'a, botunuz ile ilgili bir çok olay ve durumu besleyebilmektedir. Bu sayade bot'unuz üzerinden kullanıcılara ilettiğiniz tüm mesajların durumu ve bu mesajlara kullanıcılarınızın yazdığı cevapları alabilir ve bu eventlere göre değişik aksiyonlar alabilirsiniz. Platform bu olay ve durumları webhook'unuza POST isteği yaparak eletecektir.</p>
+<ul>
+<li><a href="#webhook-konfigursayonu-nasıl-yapılır">WebHook Konfigürsayonu Nasıl Yapılır?</a></li>
+<li><a href="#webhook-events">Webhook Events</a></li>
+<li><a href="#event-format">Event Format</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="webhook-konfigursayonu-nasıl-yapılır"></a><a href="#webhook-konfigursayonu-nasıl-yapılır" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Webhook Konfigürsayonu Nasıl Yapılır?</h2>
+<p>Botunuzu ile ilgili kongigürasyonu şu anda yalnızca diyalog-server uygulamasının server.conf dosyasına aşağıdaki konfigürasyon parametrelerini girerek yapabilirsiniz.</p>
+<pre><code class="hljs">modules {
+    webbots {
+        info : [
+            {
+                botUserName : &quot;your_bot_username&quot;,
+                webhook : {
+                    id : &quot;id_of_your_webhook&quot;,
+                    url : &quot;http://my_sample_webhook_url.com/&quot;,
+                    app_secret : &quot;ffeceefiaae0aec8naich2queid1thoohi3pohSah7ohgaedaengiethah1ahthuumee12affcqq12&quot;,
+                    verify_token : &quot;&quot;,
+                    subscribed_webhook_events : [&quot;MessageEchoes&quot;,MessageDeliveries&quot;,&quot;MessageReads&quot;,&quot;Messages&quot;]
+                }
+            },
+            ...
+        ]
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr><th>Konfigürasyon</th><th>Açıklaması</th></tr>
+</thead>
+<tbody>
+<tr><td>botUserName</td><td>Webbot'unuzun kullanıcı adı. Bu admin tarafından bot oluşturulurken girilen kullanıcı adı bilgisi ile anı olmalıdır.</td></tr>
+<tr><td>id</td><td>Bu bilgi webhook'unuza geri iletilir. Bu sayede eğer sistemde birden fazla webbot'unuz var ve hepsinin aynı webhook ile karşılıyorsanız bu id ile ayırt edebilirsiniz. İsterseniz tüm webbot'larınız için tek bir webhook id'si verebilirisiniz. Bu tamamen geliştirdiğiniz webhook'a bağlıdır.</td></tr>
+<tr><td>url</td><td>Webhook'unuzun internete açık url bilgisi. Dlg Platformu bu url'ye istek gönderecektir.</td></tr>
+<tr><td>app_secret</td><td>Dlg platformu üzerinden gelen istekleri doğrulayabilmeniz için kullanılır. Belirlerdiğiniz app secret değeri ile Dlg Platformu size ilettiği her mesajın SHA1 HMAC'ini oluşturup isteğin header'ına &quot;X-Signature&quot; olarak bu değeri ekler. Gelen istekleri HMAC'i kontrol ederek doğrulayabilirsiniz.</td></tr>
+<tr><td>verify_token</td><td>Bu bilgi kullanılarak webhook'unuzu Dlg Platform'u doğrulama yapacaktır fakat şu anda geliştirmeleri henüz tamamlanmamıştır.</td></tr>
+<tr><td>subscribed_webhook_events</td><td>Dlg Platformu sadece sizin subscribe olduğunuz event'leri size iletir. Bu eventleri de bu parametre ile sisteme tanımlayabilirsiniz. Bir array olarak &quot;MessageDeliveries&quot;,&quot;MessageReads&quot;,&quot;MessageEchoes&quot; değerlerinden en az birini veya hepsin, girip event'lere sunscribe olabilirsiniz.</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="webhook-events"></a><a href="#webhook-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Webhook Events</h2>
+<p>Dlg Platformundan alabileceğiniz event türlerini aşağıda bulabilirsiniz. Farklı ve yeni event'ler ilerleyen zamanlarda eklenecektir.
+Event'lerin hepsini veya istediğinizi webhook'unuz aracılığı ile platfrom size iletir.</p>
+<table>
+<thead>
+<tr><th>Webhook Event</th><th>Açıklaması</th></tr>
+</thead>
+<tbody>
+<tr><td>MessageEchoes</td><td>Bu event'e subscribe olduğunuzda bot'unuzu üzerinden ilettiğiniz mesajlar alıcıya gönderildiği bilgisini bu event'e subscribe olursanız alabilirsiniz.</td></tr>
+<tr><td>MessageDeliveries</td><td>Webbot'unuz üzerinden alıcılara kesinlikle iletilmiş olan mesaj id bilgilerini bu event'e subscribe olursanız alabilirsiniz.</td></tr>
+<tr><td>MessageReads</td><td>Webbot'unuz aracılığı ile alıcılara ilettiğiniz mesajlar kullanıcı tarafından okunan mesaj id bilgilerini bu event' subscribe olursanız alabilirsiniz.</td></tr>
+<tr><td>Messages</td><td>Kullanıcılar size mesaj yazdıklarında webhook'unuza bu mesajlar webhook'unuz üzerinden iletilir. Bu mesajları alabilmek için bu event'e subscribe olmanız gerekmektedir.</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="event-format"></a><a href="#event-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event Format</h2>
+<p>Bütün webhook event'leri aşağıda belirtilen format ile webhook'unuza iletilir.
+Bu formatta webhook'unuzu id bilgisi gönderen bot id'si ve alıcı id numarası ve müşteri numarası, event'n iletilme zamanı her event türünde yer alır. Event'in içeriği event tipine göre değişiklik göstermektedir.
+Bir diğer konuda DLG platformu her bir event'i teker teker sisteminize göndermek yerine maximum 10 event'i toplar ve tek seferde iletir. Tabi eğer 5 saniye içerisinde 10 adet evetn birikmemişse o ana kadar oluşan event'leri webhook'unuza iletecektir.
+Tüm eventleri <strong>entry</strong> array objesinde iletir.</p>
+<p>Örnek bir Event formatını aşağıda bulabilirsiniz.</p>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560172933001,
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },              
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560172926374,
+
+          ...              
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<p>Yukarıdaki json objesinin parametrelerinin anlamaları aşağıdaki gibidir.</p>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>object</td><td>String</td><td>Bu alan default olarak &quot;dialog&quot; olarak size dönecektir.</td></tr>
+<tr><td>entry</td><td>Array&lt;<a href="#entry">entry</a>&gt;</td><td>Bu alan eventlerin iletildiği array'dir. Bir veya birden fazla event objesi size iletilecektir. Her istekte en az bir  ve en çok 10 adet event'i entry içerisinden alabilirsiniz.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="entry"></a><a href="#entry" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>entry</h3>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>String</td><td>Webbot'unuz için konfigürasyon sırasında verdiğiniz id bilgisi bu alan üzerinden size geri iletilir.</td></tr>
+<tr><td>time</td><td>Number</td><td>Event'in Dlg Platformu tarafından size iletildiği zamandır (epoch milisaniye)</td></tr>
+<tr><td>messaging</td><td>Array&lt;<a href="#messaging">messaging</a>&gt;</td><td>Her bir event bilgisini içeren array'dir. İleriye yönelik olarak burası array olarak tasarlanmıştır fakat sadece bir obje içerecek şekilde size iletilecektir. Bu nedenle ilk elemanının alıp kullanabilirisiniz.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="messaging"></a><a href="#messaging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>messaging</h3>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>sender</td><td>&lt;<a href="#sender">sender</a>&gt;</td><td>Mesajın iletildiği webbot'un bilgileri</td></tr>
+<tr><td>recipient</td><td>&lt;<a href="#recipient">recipient</a>&gt;</td><td>Mesajın iletildiği webbot'un bilgileri</td></tr>
+<tr><td>timestamp</td><td>Number</td><td>Event zamanı (epoch milisaniye)</td></tr>
+<tr><td>Event Datası</td><td><a href="#event-datası">Event Datası</a></td><td>Her bir event için farklı olan event içeriğidir.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sender"></a><a href="#sender" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sender</h3>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>String</td><td>Mesajı gönderen Webbot'un Dlg platformu üzerindeki tekil id bilgisidir.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="recipient"></a><a href="#recipient" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>recipient</h3>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>appCustomerId</td><td>String</td><td>Mesajın iletildiği kullanıcının müşteri numarasıdır.</td></tr>
+<tr><td>id</td><td>String</td><td>Mesajın iletildiği kullanıcınınDlg platformu üzerindeki tekil id bilgisidir.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="event-datası"></a><a href="#event-datası" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event Datası</h3>
+<p><strong>MessageEchoes</strong></p>
+<p>Message Echo event'i bot üzerinden mesaj kullanıcıya gönderildiğinde oluşan event'tir.
+Bu event kullanıcıya mesajın gönderildiğini belirtir. Bu event kullanıcıya iletildi anlamına gelmez.</p>
+<p>Örnek messageEcho içeriği aşağıdaki gibidir.</p>
+<pre><code class="hljs">  &quot;messageEcho&quot;: {
+    &quot;app_id&quot;: 1614379680,
+    &quot;is_echo&quot;: true,
+    &quot;mid&quot;: &quot;messageId-92&quot;
+  }
+</code></pre>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>app_id</td><td>String</td><td>Mesajı gönderen Webbot'un Dlg platformu üzerindeki tekil id bilgisidir.</td></tr>
+<tr><td>is_echo</td><td>Boolean</td><td>Default true olarak döner.</td></tr>
+<tr><td>mid</td><td>String</td><td>Gönderilen mesajın id'si</td></tr>
+</tbody>
+</table>
+<p>Aşağıda MessageEcho event'ine örnek entry görebilirsiniz.</p>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560172933001,
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },              
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560172926374,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-92&quot;
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<p><strong>MessageDeliveries</strong></p>
+<p>Message Deliveries event'i bot üzerinden mesaj veya mesajlar iletildiğinde oluşan eventtir.
+Bu event webhook'unuza iletildiğinde event içerisinde iletilen tüm mesaj id'li mesajlar kesinlikle kullanıcıya ulaştırılmış demektir.</p>
+<p>Örnek delivery içeriği aşağıdaki gibidir.</p>
+<pre><code class="hljs">  &quot;delivery&quot;: {
+    &quot;mids&quot;: [
+      &quot;messageId-92&quot;
+    ],
+    &quot;watermark&quot;: 1560195968593
+  }
+</code></pre>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>mids</td><td>Array[String]</td><td>Kullanıcıya iletilen mesajların mesaj id'lerini içeren array'dir. Bu array içerisindeki tüm mesaj id'leri kullanıcıya iletilmiştir.</td></tr>
+<tr><td>watermark</td><td>Number</td><td>İletim event'inin zamanı (epoch milisaniye).  Bu parametre içerisindeki zamandan önceki tüm mesajlar iletilmiştir.</td></tr>
+</tbody>
+</table>
+<p>Aşağıda MessageDeliveries event'ine örnek bir entry görebilirsiniz.</p>
+<pre><code class="hljs">{
+   &quot;object&quot;: &quot;dialog&quot;,
+   &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560195973608,
+
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560172926374,
+          
+          &quot;delivery&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-92&quot;,
+              &quot;messageId-93&quot;
+            ],
+            &quot;watermark&quot;: 1560195968593
+          }
+        }
+      ]
+    }
+  ]
+}    
+</code></pre>
+<p><strong>MessageReads</strong></p>
+<p>Bu event kullanıcı mesajı okuduğunda webhook'unuza iletilir.</p>
+<p>Örnek read içeriği aşağıdaki gibidir.</p>
+<pre><code class="hljs"> &quot;reads&quot;: {
+    &quot;mids&quot;: [
+      &quot;messageId-92&quot;
+    ],
+    &quot;watermark&quot;: 1560197145045
+  }
+</code></pre>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>mids</td><td>Array[String]</td><td>Kullanıcının okuduğu mesajların mesaj id'lerini içeren array'dir. Bu array içerisindeki tüm mesaj id'leri kullanıcı tarafından okunmuştur.</td></tr>
+<tr><td>watermark</td><td>Number</td><td>Okunma event'inin zamanı (epoch milisaniye).  Bu parametre içerisindeki zamandan önceki tüm mesajlar okunmuştur.</td></tr>
+</tbody>
+</table>
+<p>Aşağıda MessageReads event'ine örnek bir entry görebilirsiniz.</p>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560197150060,
+
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+
+          &quot;timestamp&quot;: 1560197145045,
+          
+          &quot;reads&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-92&quot;
+            ],
+            &quot;watermark&quot;: 1560197145045
+          }
+        }
+      ]
+    }
+  ]
+}  
+</code></pre>
+<p><strong>Messages</strong></p>
+<p>Kullanıcı tarafından webbot'unuza cevap yazıldığında webhook'unuza bu event ile kullanıcı mesajı iletilir.</p>
+<p>Örnek message içeriği aşağıdaki gibidir.</p>
+<pre><code class="hljs">  &quot;message&quot;: {
+    &quot;mid&quot;: &quot;messageId-92&quot;,
+    &quot;text&quot;: &quot;Hello&quot;
+  }
+</code></pre>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Tipi</th><th>Açıklama</th></tr>
+</thead>
+<tbody>
+<tr><td>mid</td><td>String</td><td>Kullanıcıya iletilmiş olan son mesajın id'sidir. Kullanıcı bu mesaj'a cevap yazmıştır.</td></tr>
+<tr><td>text</td><td>String</td><td>Kullanıcının yazdığı cevabın içeriğidir.</td></tr>
+</tbody>
+</table>
+<p>Aşağıda Messages event'ine örnek bir entry görebilirsiniz.</p>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560198179122,
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560198174092,
+          
+          &quot;message&quot;: {
+            &quot;mid&quot;: &quot;messageId-92&quot;,
+            &quot;text&quot;: &quot;Hello&quot;
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="bazı-ornek-event-i-stekleri"></a><a href="#bazı-ornek-event-i-stekleri" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bazı Örnek Event İstekleri</h2>
+<ol>
+<li>Bot tarafından kullanıcıya bir mesaj iletildiğinde normal koşullarda gönderim (MessageEchoes) ve iletim (MessageDeliveries) eventi webhook'a aşağıdaki gibi iletilir.</li>
+</ol>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199033954,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199028642,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-101&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199033954,
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199028982,
+          
+          &quot;delivery&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-101&quot;
+            ],
+            &quot;watermark&quot;: 1560199028982
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<ol start="2">
+<li>Bir başka örnek ise kullanıcı chat ekranı açıkken webbot üzerinden mesajları almış ve anında okumuş olabilir. Bu durumda aşağıdaki gibi bir event içeriği alırsınız.</li>
+</ol>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199722035,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199716748,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-102&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199722035,
+
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199717421,
+          
+          &quot;delivery&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-102&quot;
+            ],
+            &quot;watermark&quot;: 1560199717421
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560199722035,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560199717448,
+
+          &quot;reads&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-102&quot;
+            ],
+            &quot;watermark&quot;: 1560199717448
+          }
+        }
+      ]
+    }
+  ]
+} 
+</code></pre>
+<ol start="3">
+<li>Aynı anda birden fazla kullanıcıya aynı anda mesaj gönderilmektedir. Aşağıdaki örnek event isteğinde 70021 ve 70022 müşteri numaralarına webbot tarafından yaklaşık zamanlarda mesaj gönderilmiş ve 70021 numaralı müşteriye mesaj iletilmiş ama 70022 numaralı müşteriye henüz iletilememiştir.</li>
+</ol>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560200490563,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;timestamp&quot;: 1560200485050,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-103&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560200490563,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70022&quot;,
+            &quot;id&quot;: &quot;1588406039&quot;
+          },
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;timestamp&quot;: 1560200488953,
+          
+          &quot;messageEcho&quot;: {
+            &quot;app_id&quot;: 1614379680,
+            &quot;is_echo&quot;: true,
+            &quot;mid&quot;: &quot;messageId-101&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560200490563,
+      &quot;messaging&quot;: [
+        {
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;timestamp&quot;: 1560200485546,
+          &quot;delivery&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-103&quot;
+            ],
+            &quot;watermark&quot;: 1560200485546
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<ol start="4">
+<li>Bir başka örnek ise kullanıcıya mesajlar iletilmiş fakat kullanıcı bir süre sonra kendisine gönderilem mesajları okumuştur. Bu durumda kullanıcının mesajları okuduğu anda sadece okuma eventleri aşağıdaki gibi olacaktır.
+Aşağıdaki içerikten görüldüğü üzere kullanıcı o anda messageId-103, messageId-104, messageId-105 mesaj id'li mesajları okumuştur.</li>
+</ol>
+<pre><code class="hljs">{
+  &quot;object&quot;: &quot;dialog&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;id&quot;: &quot;OTP&quot;,
+      &quot;time&quot;: 1560201130747,
+      
+      &quot;messaging&quot;: [
+        {
+          &quot;sender&quot;: {
+            &quot;id&quot;: &quot;1614379680&quot;
+          },
+          &quot;recipient&quot;: {
+            &quot;appCustomerId&quot;: &quot;70021&quot;,
+            &quot;id&quot;: &quot;243540663&quot;
+          },
+          &quot;timestamp&quot;: 1560201125731,
+          
+          &quot;reads&quot;: {
+            &quot;mids&quot;: [
+              &quot;messageId-103&quot;,
+              &quot;messageId-104&quot;,
+              &quot;messageId-105&quot;
+            ],
+            &quot;watermark&quot;: 1560201125731
+          }
+        }
+      ]
+    }
+  ]
+}</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#webhook-konfigursayonu-nasıl-yapılır">Webhook Konfigürsayonu Nasıl Yapılır?</a></li><li><a href="#webhook-events">Webhook Events</a></li><li><a href="#event-format">Event Format</a><ul class="toc-headings"><li><a href="#entry">entry</a></li><li><a href="#messaging">messaging</a></li><li><a href="#sender">sender</a></li><li><a href="#recipient">recipient</a></li><li><a href="#event-datası">Event Datası</a></li></ul></li><li><a href="#bazı-ornek-event-i-stekleri">Bazı Örnek Event İstekleri</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.png" alt="Diyalog" width="66" height="52"/></a><div><h5>Docs</h5><a href="/docs/en/GettingStarted/overview">Getting Started</a><a href="/docs/en/Android/doc_getting_started">Android</a><a href="/docs/en/iOS/iOS">iOS</a><a href="/docs/en/cordovaPlugin/HowToUseCordova">Cordova plugin</a><a href="/docs/en/diyalogWebSdk/WebSdk">Web SDK</a><a href="/docs/en/diyalog-messaging-api/diyalog-messaging-api">Messaging API</a><a href="/docs/en/diyalog-webhook-api/diyalog-webhook-api">Integration With Domain</a></div><div><h5>Community</h5><a href="https://landing.diyalog.im/#features" target="_blank" rel="noreferrer noopener">User Features</a><a href="https://landing.diyalog.im/#whyus" target="_blank" rel="noreferrer noopener">Why Diyalog</a><a href="https://landing.diyalog.im/#packages" target="_blank" rel="noreferrer noopener">packages</a><a href="https://landing.diyalog.im/#apisection" target="_blank" rel="noreferrer noopener">Dialog API and SDK</a><a href="https://landing.diyalog.im/#contact" target="_blank" rel="noreferrer noopener">contact</a></div><div><h5>More</h5><a href="https://github.com/diyalog-im/diyalog-platform" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright"><div>Copyright © 2019 Diyalog - All Rights Reserved</div><div><a href="/docs/en/privacy_terms/privacy">Privacy  &amp; Terms</a></div></section></footer></div></body></html>
