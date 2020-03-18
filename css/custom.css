@@ -1,0 +1,42 @@
+/* your custom css */
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    /*font-family: system-ui;*/
+    /* color: #a6a6a6; */
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+.top {
+  background: -webkit-linear-gradient(#40b7ed, #3ebfed); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#40b7ed, #3ebfed); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#40b7ed, #3ebfed); /* For Firefox 3.6 to 15 */
+  background: linear-gradient( #40b7ed, #3ebfed); /* Standard syntax */
+}
+
+:root {
+  --ifm-color-primary: #38b6f0;
+  --ifm-color-primary-dark: #1cacee;
+  --ifm-color-primary-darker: #12a6ea;
+  --ifm-color-primary-darkest: #0f89c1;
+  --ifm-color-primary-light: #54c0f2;
+  --ifm-color-primary-lighter: #61c5f3;
+  --ifm-color-primary-lightest: #8bd4f6;
+}
