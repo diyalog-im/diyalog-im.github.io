@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="/styles.fcc23f2a.css">
 
 
-<link rel="preload" href="/styles.74035797.js" as="script">
+<link rel="preload" href="/styles.8341f410.js" as="script">
 
-<link rel="preload" href="/runtime~main.cc38280f.js" as="script">
+<link rel="preload" href="/runtime~main.488ba356.js" as="script">
 
-<link rel="preload" href="/main.81b9134c.js" as="script">
+<link rel="preload" href="/main.f090b8b8.js" as="script">
 
-<link rel="preload" href="/common.271438c5.js" as="script">
+<link rel="preload" href="/common.8e038663.js" as="script">
 
-<link rel="preload" href="/2.0568e45b.js" as="script">
+<link rel="preload" href="/2.31115908.js" as="script">
 
-<link rel="preload" href="/3.d7b193a1.js" as="script">
+<link rel="preload" href="/3.2d89642c.js" as="script">
 
-<link rel="preload" href="/1be78505.61f3ef3a.js" as="script">
+<link rel="preload" href="/1be78505.2ec52951.js" as="script">
 
-<link rel="preload" href="/20ac7829.d0e01c02.js" as="script">
+<link rel="preload" href="/20ac7829.83a2b26c.js" as="script">
 
-<link rel="preload" href="/17896441.346027b7.js" as="script">
+<link rel="preload" href="/17896441.1541f792.js" as="script">
 
-<link rel="preload" href="/716f46ee.4b9da55a.js" as="script">
+<link rel="preload" href="/716f46ee.f221e39c.js" as="script">
 
 </head>
 <body>
@@ -71,25 +71,25 @@
 </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">| Record Name  | DNS Name (sample)  | Default Port |  Description |</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">| ------------ | -----------------  | ------------ | -------------  |</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">| web          | web.domain.com     | 3000 | Web client application endpoint.             |</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">| ws           | ws.domain.com      | 4858 | Websocket port of Diyalog server for clients.|</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">| tcp          | tcp.domain.com     | 4857 | Tcp port of Diyalog server for mobile apps.  |</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">| api          | api.domain.com     | 4859 | Http api endpoint. This endpoint is also support bots. |</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    </span></div></code></pre></div><ol start="4"><li><p>Starting MasterBot app to be able to create and manage credentials of new bot applications.</p><p>There is a possibility to create new bot applications for the Diyalog platform. There is a diyalog-bots-platform library. You can use this library to create new bot application which can communicate with diyalog-server. MasterBot is a bot application. Its main purpose is to create and manage newly developed bot applications. </p><p><strong>diyalog-masterbot</strong> docker image should be used for running diyalog masterbot. You can start MasterBot docker image with following command. Since Masterbot app will connect to Diyalog-server when started, diyalog-server should be started first.</p><p>For starting Masterbot app you need to set some environment variables. You can find the details about them below.</p><p><strong>MasterBot Settings</strong></p><div class="mdxCodeBlock_iHAB"><pre class="prism-code language-undefined codeBlock_19pQ"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><code class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">BOT_ENDPOINT : Diyalog server &quot;api&quot; endpoint adress. Diyalog server is waiting </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                  websocket connection from bot applications at port 4859 as default.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                  This port shou</span></div></code></pre></div><p>for starting docker image:</p><div class="mdxCodeBlock_iHAB"><pre class="prism-code language-undefined codeBlock_19pQ"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><code class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">docker run \</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    --name=diyalog-masterbot \</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    -e &quot;BOT_ENDPOINT=ws://&lt;Diyalog Server api endpoint&gt;&quot; \</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    -e &quot;BOT_USERNAME=&lt;Username which created in Diyalog platform for Masterbot&gt;&quot; \</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    -e &quot;BOT_TOKEN=&lt;Token which created in Diyalog platform for Masterbot&gt;&quot; \</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    -d \</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    diyalog-masterbot:1.0.0</span></div></code></pre></div></li></ol><ol start="5"><li></li></ol><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="server-installation"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#server-installation" title="Direct link to heading">#</a>Server Installation</h2></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/overview"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« Diyalog Messaging Platform</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/android_getting_started"><h5 class="pagination-nav__link--sublabel">Next</h5><h4 class="pagination-nav__link--label">Android SDK of Diyalog Messaging Platform »</h4></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#diyalog-server-has-following-parts" class="contents__link">Diyalog server has following parts:</a></li><li><a href="#integration" class="contents__link">Integration</a></li><li><a href="#devops-documentation" class="contents__link">DevOps Documentation</a></li><li><a href="#server-installation" class="contents__link">Server Installation</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Learn</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/overview">Docs</a></li><li class="footer__item"><a class="footer__link-item" to="https://github.com/diyalog-im/diyalog-platform" target="_blank" href="https://github.com/diyalog-im/diyalog-platform">GitHub</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Company</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/aboutus">About Us</a></li><li class="footer__item"><a class="footer__link-item" href="/contactus">Contact Us</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/privacy">Privacy and Terms</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Downloads</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" to="https://play.google.com/store/apps/details?id=im.diyalog.diyalogapp" target="_blank" href="https://play.google.com/store/apps/details?id=im.diyalog.diyalogapp">Android</a></li><li class="footer__item"><a class="footer__link-item" to="https://apps.apple.com/us/app/dlg-messenger/id1449572267?ls=1" target="_blank" href="https://apps.apple.com/us/app/dlg-messenger/id1449572267?ls=1">iPhone</a></li><li class="footer__item"><a class="footer__link-item" to="https://web.dlgmessenger.com" target="_blank" href="https://web.dlgmessenger.com">Web App</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 Diyalog - All Rights Reserved</div></div></div></footer>
 </div>
 
-<script src="/styles.74035797.js"></script>
+<script src="/styles.8341f410.js"></script>
 
-<script src="/runtime~main.cc38280f.js"></script>
+<script src="/runtime~main.488ba356.js"></script>
 
-<script src="/main.81b9134c.js"></script>
+<script src="/main.f090b8b8.js"></script>
 
-<script src="/common.271438c5.js"></script>
+<script src="/common.8e038663.js"></script>
 
-<script src="/2.0568e45b.js"></script>
+<script src="/2.31115908.js"></script>
 
-<script src="/3.d7b193a1.js"></script>
+<script src="/3.2d89642c.js"></script>
 
-<script src="/1be78505.61f3ef3a.js"></script>
+<script src="/1be78505.2ec52951.js"></script>
 
-<script src="/20ac7829.d0e01c02.js"></script>
+<script src="/20ac7829.83a2b26c.js"></script>
 
-<script src="/17896441.346027b7.js"></script>
+<script src="/17896441.1541f792.js"></script>
 
-<script src="/716f46ee.4b9da55a.js"></script>
+<script src="/716f46ee.f221e39c.js"></script>
 
 
 </body>
