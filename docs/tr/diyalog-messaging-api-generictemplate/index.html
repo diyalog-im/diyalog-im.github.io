@@ -7,15 +7,15 @@
 <link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Diyalog - Dlg Messenger Blog RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Diyalog - Dlg Messenger Blog Atom Feed"><title data-react-helmet="true">Generic Mesaj Şablonu | Diyalog - Dlg Messenger</title><meta data-react-helmet="true" property="og:url" content="https://diyalog-im.github.io/docs/tr/diyalog-messaging-api-generictemplate"><meta data-react-helmet="true" name="docusaurus_locale" content="en"><meta data-react-helmet="true" name="docusaurus_version" content="current"><meta data-react-helmet="true" name="docusaurus_tag" content="docs-default-current"><meta data-react-helmet="true" property="og:title" content="Generic Mesaj Şablonu | Diyalog - Dlg Messenger"><meta data-react-helmet="true" name="description" content="&lt;span"><meta data-react-helmet="true" property="og:description" content="&lt;span"><link data-react-helmet="true" rel="shortcut icon" href="/img/favicon/favicon.ico"><link data-react-helmet="true" rel="canonical" href="https://diyalog-im.github.io/docs/tr/diyalog-messaging-api-generictemplate"><link data-react-helmet="true" rel="alternate" href="https://diyalog-im.github.io/docs/tr/diyalog-messaging-api-generictemplate" hreflang="en"><link data-react-helmet="true" rel="alternate" href="https://diyalog-im.github.io/docs/tr/diyalog-messaging-api-generictemplate" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.0ac7f9f3.css">
 <link rel="preload" href="/assets/js/styles.da104560.js" as="script">
-<link rel="preload" href="/assets/js/runtime~main.5eba2b02.js" as="script">
-<link rel="preload" href="/assets/js/main.cee37c0a.js" as="script">
-<link rel="preload" href="/assets/js/1.c171d056.js" as="script">
-<link rel="preload" href="/assets/js/2.37cbf4d4.js" as="script">
-<link rel="preload" href="/assets/js/67.f2d77383.js" as="script">
-<link rel="preload" href="/assets/js/68.11609f54.js" as="script">
-<link rel="preload" href="/assets/js/935f2afb.159ebcea.js" as="script">
-<link rel="preload" href="/assets/js/17896441.024202e0.js" as="script">
-<link rel="preload" href="/assets/js/04546a69.2dbc0e9b.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.6ea36a7e.js" as="script">
+<link rel="preload" href="/assets/js/main.43012675.js" as="script">
+<link rel="preload" href="/assets/js/1.658e8e79.js" as="script">
+<link rel="preload" href="/assets/js/2.fce4836d.js" as="script">
+<link rel="preload" href="/assets/js/68.c7959c8c.js" as="script">
+<link rel="preload" href="/assets/js/69.c48daa10.js" as="script">
+<link rel="preload" href="/assets/js/935f2afb.e3eb25eb.js" as="script">
+<link rel="preload" href="/assets/js/17896441.2bb3f6fb.js" as="script">
+<link rel="preload" href="/assets/js/04546a69.79e1070c.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -35,14 +35,14 @@ olması gerekmektedir. Ayrıca sizin uygulamanızında aynı anahtarlara sahip o
 api&#x27;ye iletilen mesageId köşeli parantez içerisinde, payload&#x27;unuzla &quot;:&quot;  karakteri ile ayrılarak iletilir. </p><p><strong>Örneğin :</strong><br>
 &quot;[messageId-74]:123456&quot;</p><p>Eğer payloadHidden true olarak set edilmiş olsaydı bu değer aşağıdaki gibi olacaktır. Yani payload değeri imzalanmış olarak iletilecektir.</p><p>&quot;[messageId-74]:12a22113123131213aaab444cb3c224bcb&quot;</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2LWZ" id="dönen-yanıt-response"></a>Dönen Yanıt (Response)<a class="hash-link" href="#dönen-yanıt-response" title="Direct link to heading">#</a></h2><p>Başarılı sonuçlanan API istekleri <strong>http-2XX</strong> cevap kodu ile cevap json objesini döner.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2LWZ" id="yanıt-örneği"></a>Yanıt Örneği<a class="hash-link" href="#yanıt-örneği" title="Direct link to heading">#</a></h3><div class="codeBlockContainer_K1bP"><div class="codeBlockContent_hGly json"><div tabindex="0" class="prism-code language-json codeBlock_23N8 thin-scrollbar"><div class="codeBlockLines_39YC" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   </span><span class="token property">&quot;recipient_id&quot;</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&quot;2074022437&quot;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   </span><span class="token property">&quot;message_id&quot;</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&quot;-7523925115459309081&quot;</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span></div></div></div><button type="button" aria-label="Copy code to clipboard" class="copyButton_Ue-o">Copy</button></div></div></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Docs pages navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_35-E thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#i̇stek-uriı" class="table-of-contents__link">İstek URI&#39;ı</a></li><li><a href="#i̇stek-json-objesi-detayları" class="table-of-contents__link">İstek Json Objesi Detayları</a><ul><li><a href="#recipient" class="table-of-contents__link"><greencoloredtext>recipient</greencoloredtext></a></li><li><a href="#message" class="table-of-contents__link"><greencoloredtext>message</greencoloredtext></a></li><li><a href="#attachment" class="table-of-contents__link"><greencoloredtext>attachment</greencoloredtext></a></li><li><a href="#payload" class="table-of-contents__link"><greencoloredtext>payload</greencoloredtext></a></li><li><a href="#element" class="table-of-contents__link"><greencoloredtext>element</greencoloredtext></a></li><li><a href="#buttonv2" class="table-of-contents__link"><greencoloredtext>buttonV2</greencoloredtext></a></li></ul></li><li><a href="#dönen-yanıt-response" class="table-of-contents__link">Dönen Yanıt (Response)</a><ul><li><a href="#yanıt-örneği" class="table-of-contents__link">Yanıt Örneği</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Learn</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/overview">Docs</a></li><li class="footer__item"><a href="https://github.com/diyalog-im/diyalog-platform" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Company</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/aboutus">About Us</a></li><li class="footer__item"><a class="footer__link-item" href="/contactus">Contact Us</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/privacy">Privacy and Terms</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Downloads</h4><ul class="footer__items"><li class="footer__item"><a href="https://play.google.com/store/apps/details?id=im.diyalog.diyalogapp" target="_blank" rel="noopener noreferrer" class="footer__link-item">Android</a></li><li class="footer__item"><a href="https://apps.apple.com/us/app/dlg-messenger/id1449572267?ls=1" target="_blank" rel="noopener noreferrer" class="footer__link-item">iPhone</a></li><li class="footer__item"><a href="https://web.dlgmessenger.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Web App</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2021 Diyalog - All Rights Reserved</div></div></div></footer></div>
 <script src="/assets/js/styles.da104560.js"></script>
-<script src="/assets/js/runtime~main.5eba2b02.js"></script>
-<script src="/assets/js/main.cee37c0a.js"></script>
-<script src="/assets/js/1.c171d056.js"></script>
-<script src="/assets/js/2.37cbf4d4.js"></script>
-<script src="/assets/js/67.f2d77383.js"></script>
-<script src="/assets/js/68.11609f54.js"></script>
-<script src="/assets/js/935f2afb.159ebcea.js"></script>
-<script src="/assets/js/17896441.024202e0.js"></script>
-<script src="/assets/js/04546a69.2dbc0e9b.js"></script>
+<script src="/assets/js/runtime~main.6ea36a7e.js"></script>
+<script src="/assets/js/main.43012675.js"></script>
+<script src="/assets/js/1.658e8e79.js"></script>
+<script src="/assets/js/2.fce4836d.js"></script>
+<script src="/assets/js/68.c7959c8c.js"></script>
+<script src="/assets/js/69.c48daa10.js"></script>
+<script src="/assets/js/935f2afb.e3eb25eb.js"></script>
+<script src="/assets/js/17896441.2bb3f6fb.js"></script>
+<script src="/assets/js/04546a69.79e1070c.js"></script>
 </body>
 </html>
