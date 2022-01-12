@@ -8,8 +8,13 @@ body {
     /*font-family: system-ui;*/
     /* color: #a6a6a6; */
 }
+@font-face {
+  font-family: bariolFont;
+  src: ('../fonts/Bariol_Regular.otf');
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -32,13 +37,18 @@ body {
 }
 
 :root {
-  --ifm-color-primary: #38b6f0;
+  --ifm-color-primary: #00ADA8;
   --ifm-color-primary-dark: #1cacee;
   --ifm-color-primary-darker: #12a6ea;
   --ifm-color-primary-darkest: #0f89c1;
   --ifm-color-primary-light: #54c0f2;
   --ifm-color-primary-lighter: #61c5f3;
   --ifm-color-primary-lightest: #8bd4f6;
+  
+  --ifm-navbar-link-color : white;
+  --ifm-navbar-background-color: #00ADA8;
+  --ifm-navbar-shadow : None;
+  
 }
 
 .docusaurus-highlight-code-line {
